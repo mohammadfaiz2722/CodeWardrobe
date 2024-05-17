@@ -52,3 +52,7 @@
   /* margin-top: 42px;  */
 }
 .closeicon{}
+.sidecart.translate-x-full {
+  /* Existing styles for side cart when off-screen */
+  transform: translateX(100%); /* Adjust offset if needed */
+}

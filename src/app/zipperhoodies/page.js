@@ -236,3 +236,41 @@ const page = () => {
 }
 
 export default page
+
+
+
+// <div
+//         className={`fixed top-0 right-0 h-full w-80 bg-pink-100 transition-transform duration-300 ${
+//           isSidebarOpen ? "translate-x-0" : "translate-x-full"
+//         }`}
+//       >
+//         <div className="relative h-full">
+//           <div className="p-6">
+//             <h2 className="font-bold text-xl text-center mb-4">Shopping Cart</h2>
+//             <ul className="space-y-4">
+//               <li>
+//                 <div className="item flex justify-between">
+//                   <div className="font-semibold">Tsirt-wear the code</div>
+//                   <div className="flex items-center">
+//                     <button className="text-pink-500 text-2xl">-</button>
+//                     <span className="mx-2">1</span>
+//                     <button className="text-pink-500 text-2xl">+</button>
+//                   </div>
+//                 </div>
+//               </li>
+//             </ul>
+//           </div>
+//           <div className="absolute bottom-0 left-0 w-full p-6 bg-white">
+//             <button className="flex items-center justify-center w-full text-white bg-pink-500 border-0 py-2 px-4 focus:outline-none hover:bg-pink-600 rounded text-lg">
+//               <BsFillBagHeartFill className="mr-2" />
+//               Checkout
+//             </button>
+//           </div>
+//           <button
+//             onClick={toggleSidebar}
+//             className="absolute top-4 right-4 text-pink-500 text-2xl"
+//           >
+//             <AiOutlineClose />
+//           </button>
+//         </div>
+//       </div>
