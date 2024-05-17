@@ -1,18 +1,33 @@
 "use client";
 import Link from "next/link";
-import { useState } from "react";
+import { useState,useRef } from "react";
 import "./Navbar.css";
 import Image from "next/image";
 import { AiOutlineShoppingCart } from "react-icons/ai";
-
+import { TfiClose } from "react-icons/tfi";
+import { AiOutlineMinusCircle } from "react-icons/ai";
+import { AiOutlinePlusCircle } from "react-icons/ai";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-
+const ref=useRef();
   const toggleNavbar = () => {
     setIsOpen(!isOpen);
   };
+  const toggleCart=()=>{
+if(ref.current.classList.contains('translate-x-full'))
+  {
+    ref.current.classList.add('translate-x-0')
+    ref.current.classList.remove('translate-x-full')
+  }
+  else if(!ref.current.classList.contains('translate-x-full'))
+    {
+      ref.current.classList.remove('translate-x-0')
+      ref.current.classList.add('translate-x-full')
+  }
+  }
 
   return (
+    // <>
     <nav className="bg-gradient-to-r from-pink-800 to-pink-500 shadow-xl">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
@@ -72,8 +87,8 @@ const Navbar = () => {
                 >
                   Cups
                 </Link>
-                <div
-                  className="text-white hover:bg-pink-700 px-3 py-2 rounded-md text-lg font-semibold transition duration-300 ease-in-out shopping-cart"
+                <div onClick={toggleCart}
+                  className="text-white cursor-pointer hover:bg-pink-700 px-3 py-2 rounded-md text-lg font-semibold transition duration-300 ease-in-out shopping-cart"
                 >
                   <AiOutlineShoppingCart fontSize="1.4rem" />
                 </div>
@@ -81,6 +96,11 @@ const Navbar = () => {
             </div>
           </div>
           <div className="-mr-2 flex md:hidden">
+              <div onClick={toggleCart}
+                  className="text-white  hover:bg-pink-700 px-3 py-2 rounded-md text-lg font-semibold transition duration-300 ease-in-out "
+                >
+                  <AiOutlineShoppingCart fontSize="1.4rem" />
+                </div>
             <button
               onClick={toggleNavbar}
               type="button"
@@ -88,7 +108,6 @@ const Navbar = () => {
               aria-controls="mobile-menu"
               aria-expanded="false"
             >
-              <span className="sr-only">Open main menu</span>
               {!isOpen ? (
                 <svg
                   className="block h-6 w-6"
@@ -177,8 +196,27 @@ const Navbar = () => {
           >
             Cups
           </Link>
+          
         </div>
       </div>
+
+      <div ref={ref} className="w-56 sidecart absolute top-0 right-0 py-10 px-8  bg-pink-100  transform transition-transform translate-x-full">
+
+   <h2 className="font-bold text-xl shoppingcart text-center">Shopping Cart</h2>
+    <span onClick={toggleCart}className="absolute top-4 right-2 closeicon cursor-pointer text-xl text-pink-500" ><TfiClose/></span>
+
+      <ol className="list-decimal">
+        <li >
+          <div className="item flex my-4" >
+
+          <div className="w-2/3 font-semibold py-2">Tsirt-wear the code</div>
+          <div className="flex item-center justify-center w-1/3 py-2 font-semibold "><AiOutlinePlusCircle className='mx-1 text-2xl cursor-pointer'/>1<AiOutlineMinusCircle className='mx-1 text-2xl cursor-pointer'/></div>
+          </div>
+        </li>
+        
+      </ol>
+      </div>
+    {/* </> */}
     </nav>
   );
 };

@@ -3,7 +3,7 @@ import Link from 'next/link'
 const page = () => {
   return (
     <div>
-         <div className="bg-gray-100 min-h-screen">
+       <div className="bg-gray-100 min-h-screen">
       <div className="container mx-auto py-12">
         <h1 className="text-3xl font-bold text-center mb-8">Featured Tshirts</h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mx-auto">
@@ -11,7 +11,7 @@ const page = () => {
   <div className="relative group">
     <div className="bg-white rounded-lg shadow-md overflow-hidden">
       <a className="block relative rounded overflow-hidden">
-        <img alt="ecommerce" style={{ margin: 'auto' }} className="md:mx-0 h-[30vh] md:h-[36vh] block" src="https://m.media-amazon.com/images/I/31mE8vDe5-L._SX300_SY300_QL70_FMwebp_.jpg" />
+        <img alt="ecommerce" style={{ margin: 'auto' }} className="md:mx-0 h-[30vh] md:h-[36vh] block" src="https://m.media-amazon.com/images/I/61OAA70RlgL._SY879_.jpg" />
       </a>
       <div className="p-4 text-center md:text-left">
         <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">Tshirts</h3>
@@ -29,7 +29,7 @@ const page = () => {
   <div className="relative group">
     <div className="bg-white rounded-lg shadow-md overflow-hidden">
       <a className="block relative rounded overflow-hidden">
-        <img alt="ecommerce" style={{ margin: 'auto' }} className="md:mx-0 h-[30vh] md:h-[36vh] block" src="https://m.media-amazon.com/images/I/31mE8vDe5-L._SX300_SY300_QL70_FMwebp_.jpg" />
+        <img alt="ecommerce" style={{ margin: 'auto' }} className="md:mx-0 h-[30vh] md:h-[36vh] block" src="https://m.media-amazon.com/images/I/61OAA70RlgL._SY879_.jpg" />
       </a>
       <div className="p-4 text-center md:text-left">
         <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">Tshirts</h3>
@@ -47,7 +47,7 @@ const page = () => {
   <div className="relative group">
     <div className="bg-white rounded-lg shadow-md overflow-hidden">
       <a className="block relative rounded overflow-hidden">
-        <img alt="ecommerce" style={{ margin: 'auto' }} className="md:mx-0 h-[30vh] md:h-[36vh] block" src="https://m.media-amazon.com/images/I/31mE8vDe5-L._SX300_SY300_QL70_FMwebp_.jpg" />
+        <img alt="ecommerce" style={{ margin: 'auto' }} className="md:mx-0 h-[30vh] md:h-[36vh] block" src="https://m.media-amazon.com/images/I/61OAA70RlgL._SY879_.jpg" />
       </a>
       <div className="p-4 text-center md:text-left">
         <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">Tshirts</h3>
@@ -65,7 +65,7 @@ const page = () => {
   <div className="relative group">
     <div className="bg-white rounded-lg shadow-md overflow-hidden">
       <a className="block relative rounded overflow-hidden">
-        <img alt="ecommerce" style={{ margin: 'auto' }} className="md:mx-0 h-[30vh] md:h-[36vh] block" src="https://m.media-amazon.com/images/I/31mE8vDe5-L._SX300_SY300_QL70_FMwebp_.jpg" />
+        <img alt="ecommerce" style={{ margin: 'auto' }} className="md:mx-0 h-[30vh] md:h-[36vh] block" src="https://m.media-amazon.com/images/I/61OAA70RlgL._SY879_.jpg" />
       </a>
       <div className="p-4 text-center md:text-left">
         <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">Tshirts</h3>
@@ -83,7 +83,7 @@ const page = () => {
   <div className="relative group">
     <div className="bg-white rounded-lg shadow-md overflow-hidden">
       <a className="block relative rounded overflow-hidden">
-        <img alt="ecommerce" style={{ margin: 'auto' }} className="md:mx-0 h-[30vh] md:h-[36vh] block" src="https://m.media-amazon.com/images/I/31mE8vDe5-L._SX300_SY300_QL70_FMwebp_.jpg" />
+        <img alt="ecommerce" style={{ margin: 'auto' }} className="md:mx-0 h-[30vh] md:h-[36vh] block" src="https://m.media-amazon.com/images/I/61OAA70RlgL._SY879_.jpg" />
       </a>
       <div className="p-4 text-center md:text-left">
         <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">Tshirts</h3>
@@ -101,7 +101,7 @@ const page = () => {
   <div className="relative group">
     <div className="bg-white rounded-lg shadow-md overflow-hidden">
       <a className="block relative rounded overflow-hidden">
-        <img alt="ecommerce" style={{ margin: 'auto' }} className="md:mx-0 h-[30vh] md:h-[36vh] block" src="https://m.media-amazon.com/images/I/31mE8vDe5-L._SX300_SY300_QL70_FMwebp_.jpg" />
+        <img alt="ecommerce" style={{ margin: 'auto' }} className="md:mx-0 h-[30vh] md:h-[36vh] block" src="https://m.media-amazon.com/images/I/61OAA70RlgL._SY879_.jpg" />
       </a>
       <div className="p-4 text-center md:text-left">
         <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">Tshirts</h3>
@@ -119,7 +119,7 @@ const page = () => {
   <div className="relative group">
     <div className="bg-white rounded-lg shadow-md overflow-hidden">
       <a className="block relative rounded overflow-hidden">
-        <img alt="ecommerce" style={{ margin: 'auto' }} className="md:mx-0 h-[30vh] md:h-[36vh] block" src="https://m.media-amazon.com/images/I/31mE8vDe5-L._SX300_SY300_QL70_FMwebp_.jpg" />
+        <img alt="ecommerce" style={{ margin: 'auto' }} className="md:mx-0 h-[30vh] md:h-[36vh] block" src="https://m.media-amazon.com/images/I/61OAA70RlgL._SY879_.jpg" />
       </a>
       <div className="p-4 text-center md:text-left">
         <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">Tshirts</h3>
@@ -137,7 +137,7 @@ const page = () => {
   <div className="relative group">
     <div className="bg-white rounded-lg shadow-md overflow-hidden">
       <a className="block relative rounded overflow-hidden">
-        <img alt="ecommerce" style={{ margin: 'auto' }} className="md:mx-0 h-[30vh] md:h-[36vh] block" src="https://m.media-amazon.com/images/I/31mE8vDe5-L._SX300_SY300_QL70_FMwebp_.jpg" />
+        <img alt="ecommerce" style={{ margin: 'auto' }} className="md:mx-0 h-[30vh] md:h-[36vh] block" src="https://m.media-amazon.com/images/I/61OAA70RlgL._SY879_.jpg" />
       </a>
       <div className="p-4 text-center md:text-left">
         <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">Tshirts</h3>
@@ -155,7 +155,7 @@ const page = () => {
   <div className="relative group">
     <div className="bg-white rounded-lg shadow-md overflow-hidden">
       <a className="block relative rounded overflow-hidden">
-        <img alt="ecommerce" style={{ margin: 'auto' }} className="md:mx-0 h-[30vh] md:h-[36vh] block" src="https://m.media-amazon.com/images/I/31mE8vDe5-L._SX300_SY300_QL70_FMwebp_.jpg" />
+        <img alt="ecommerce" style={{ margin: 'auto' }} className="md:mx-0 h-[30vh] md:h-[36vh] block" src="https://m.media-amazon.com/images/I/61OAA70RlgL._SY879_.jpg" />
       </a>
       <div className="p-4 text-center md:text-left">
         <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">Tshirts</h3>
@@ -173,7 +173,7 @@ const page = () => {
   <div className="relative group">
     <div className="bg-white rounded-lg shadow-md overflow-hidden">
       <a className="block relative rounded overflow-hidden">
-        <img alt="ecommerce" style={{ margin: 'auto' }} className="md:mx-0 h-[30vh] md:h-[36vh] block" src="https://m.media-amazon.com/images/I/31mE8vDe5-L._SX300_SY300_QL70_FMwebp_.jpg" />
+        <img alt="ecommerce" style={{ margin: 'auto' }} className="md:mx-0 h-[30vh] md:h-[36vh] block" src="https://m.media-amazon.com/images/I/61OAA70RlgL._SY879_.jpg" />
       </a>
       <div className="p-4 text-center md:text-left">
         <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">Tshirts</h3>
@@ -191,7 +191,7 @@ const page = () => {
   <div className="relative group">
     <div className="bg-white rounded-lg shadow-md overflow-hidden">
       <a className="block relative rounded overflow-hidden">
-        <img alt="ecommerce" style={{ margin: 'auto' }} className="md:mx-0 h-[30vh] md:h-[36vh] block" src="https://m.media-amazon.com/images/I/31mE8vDe5-L._SX300_SY300_QL70_FMwebp_.jpg" />
+        <img alt="ecommerce" style={{ margin: 'auto' }} className="md:mx-0 h-[30vh] md:h-[36vh] block" src="https://m.media-amazon.com/images/I/61OAA70RlgL._SY879_.jpg" />
       </a>
       <div className="p-4 text-center md:text-left">
         <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">Tshirts</h3>
@@ -211,7 +211,7 @@ const page = () => {
   <div className="relative group">
     <div className="bg-white rounded-lg shadow-md overflow-hidden">
       <a className="block relative rounded overflow-hidden">
-        <img alt="ecommerce" style={{ margin: 'auto' }} className="md:mx-0 h-[30vh] md:h-[36vh] block" src="https://m.media-amazon.com/images/I/31mE8vDe5-L._SX300_SY300_QL70_FMwebp_.jpg" />
+        <img alt="ecommerce" style={{ margin: 'auto' }} className="md:mx-0 h-[30vh] md:h-[36vh] block" src="https://m.media-amazon.com/images/I/61OAA70RlgL._SY879_.jpg" />
       </a>
       <div className="p-4 text-center md:text-left">
         <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">Tshirts</h3>
