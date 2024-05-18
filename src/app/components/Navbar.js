@@ -176,7 +176,7 @@ const Navbar = () => {
 
       {/* Sidebar */}
       <div
-        className={`fixed top-0 right-0 h-full w-80 bg-pink-100 transition-transform duration-300 ${
+        className={`fixed top-0  z-10 right-0 h-full w-80 bg-pink-100 transition-transform duration-300  ${
           isSidebarOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
@@ -272,15 +272,19 @@ const Navbar = () => {
               {/* Add more cart items */}
             </ul>
           </div>
-          <div className="absolute bottom-0 left-0 w-full p-6 bg-white flex justify-between">
-      <button className="flex items-center text-white bg-pink-500 border-0 py-2 px-4 focus:outline-none hover:bg-pink-600 rounded text-lg">
-        <BsFillBagHeartFill className="mr-2" />
-        Checkout
-      </button>
-      <button className="flex items-center text-white bg-red-500 border-0 py-2 px-4 focus:outline-none hover:bg-red-600 rounded text-lg">
-        Clear Cart
-      </button>
-    </div>
+          <div className="mt-auto p-6 bg-gray-100 border-t">
+          {/* <div className="flex justify-between items-center mb-4">
+            <span className="font-semibold text-lg text-gray-700">Total:</span>
+            <span className="font-bold text-lg text-gray-900">₹2000</span>
+          </div> */}
+          <button className="flex items-center justify-center w-full text-white bg-pink-500 border-0 py-2 mb-2 focus:outline-none hover:bg-pink-600 rounded text-lg transition duration-300">
+            <BsFillBagHeartFill className="mr-2" />
+            Checkout
+          </button>
+          <button className="flex items-center justify-center w-full text-white bg-red-500 border-0 py-2 focus:outline-none hover:bg-red-600 rounded text-lg transition duration-300">
+            Clear Cart
+          </button>
+        </div>
     <button
       onClick={toggleSidebar}
       className="absolute top-4 right-4 text-pink-500 text-2xl"
