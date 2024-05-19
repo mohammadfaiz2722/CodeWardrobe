@@ -13,6 +13,10 @@ export const CartProvider = ({ children }) => {
       if (localStorage.getItem('cart')) {
         setCart(JSON.parse(localStorage.getItem('cart')));
       }
+      if(localStorage.getItem('total'))
+        {
+          setSubTotal(parseInt(localStorage.getItem('total')))
+        }
     } catch (error) {
       console.log(error);
       localStorage.clear();
@@ -66,7 +70,8 @@ if(itemCode in cart)
         {
             subt+=myCart[keys[i]].price*myCart[keys[i]].qty;
         }
-       setSubTotal(subt)
+        localStorage.setItem('total',JSON.stringify(subt))
+        setSubTotal(parseInt(localStorage.getItem('total')))
   };
 
   const contextValue = {

@@ -5,6 +5,7 @@ import { FaFacebookF, FaTwitter, FaWhatsapp } from "react-icons/fa";
 import { useState } from "react";
 import { useContext } from 'react';
 import { CartContext } from "@/app/cartContext";
+import Link from "next/link";
 const PostPage = ({ params }) => {
   const router = useRouter();
   const [pinCode, setPinCode] = useState("");
@@ -130,11 +131,12 @@ const PostPage = ({ params }) => {
                 <span className="title-font font-medium text-2xl text-gray-900">
                   ₹499.00
                 </span>
-                <button
+                <Link href='/checkout'><button
                   className="flex text-white  bg-pink-500 border-0 py-2 md:px-6 focus:outline-none hover:bg-pink-600 rounded text-lg transition duration-300 "
                 >
                 Buy Now
                 </button>
+                </Link>
                 <butto onClick={()=>{addToCart(params.slug,1,499,"Wear the Code(XL/Blue)","XL","RED")}}
                   className="flex cursor-pointer text-white  ml-2 bg-pink-500 border-0 py-2 md:px-6 focus:outline-none hover:bg-pink-600 rounded text-lg transition duration-300 "
                 >

@@ -1,18 +1,23 @@
 "use client"
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { CartContext } from "../cartContext";
 import Link from "next/link";
 
 const Checkout = () => {
-  const { cart, subTotal } = useContext(CartContext);
+  const { cart, subTotal, removeFromCart, addToCart } = useContext(CartContext);
+  const [showCart, setShowCart] = useState(false);
+
+  const toggleCart = () => {
+    setShowCart(!showCart);
+  };
 
   return (
-    <div className="bg-gray-100 py-10">
+    <div className="bg-gray-100 py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-extrabold text-gray-900">Checkout</h2>
-        <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <h2 className="text-4xl font-extrabold text-gray-900">Checkout</h2>
+        <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Left Column */}
-          <div>
+          <div className="space-y-6">
             <div className="bg-white shadow sm:rounded-lg p-6">
               <h3 className="text-lg font-medium text-gray-900">Contact Information</h3>
               <div className="mt-4">
@@ -27,7 +32,7 @@ const Checkout = () => {
               </div>
             </div>
 
-            <div className="bg-white shadow sm:rounded-lg p-6 mt-6">
+            <div className="bg-white shadow sm:rounded-lg p-6">
               <h3 className="text-lg font-medium text-gray-900">Shipping Address</h3>
               <div className="mt-4 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-6">
                 <div>
@@ -93,7 +98,7 @@ const Checkout = () => {
               </div>
             </div>
 
-            <div className="bg-white shadow sm:rounded-lg p-6 mt-6">
+            <div className="bg-white shadow sm:rounded-lg p-6">
               <h3 className="text-lg font-medium text-gray-900">Payment Details</h3>
               <div className="mt-4">
                 <label htmlFor="card-number" className="block text-sm font-medium text-gray-700">
@@ -131,9 +136,17 @@ const Checkout = () => {
           </div>
 
           {/* Right Column */}
-          <div>
-            <div className="bg-white shadow sm:rounded-lg p-6">
+          <div className="bg-white shadow sm:rounded-lg p-6">
+            <div className="flex justify-between items-center mb-4">
               <h3 className="text-lg font-medium text-gray-900">Order Summary</h3>
+              <button
+                className="text-pink-500 hover:text-pink-600 transition duration-300"
+                onClick={toggleCart}
+              >
+                {showCart ? "Hide Cart" : "Show Cart"}
+              </button>
+            </div>
+            {showCart && (
               <ul className="mt-4 divide-y divide-gray-200">
                 {Object.keys(cart).length === 0 && (
                   <li className="py-4 text-base font-medium text-gray-700">
@@ -143,31 +156,48 @@ const Checkout = () => {
                 {Object.keys(cart).map((k) => (
                   <li key={k} className="py-4 flex justify-between items-center">
                     <div className="text-sm font-medium text-gray-900">{cart[k].name}</div>
-                    <div className="text-sm font-medium text-gray-900">x {cart[k].qty}</div>
+                    <div className="flex items-center">
+                      <button
+                        className="text-gray-500 hover:text-gray-700 transition duration-300"
+                        onClick={() => {
+                          removeFromCart(k, 1, cart[k].price, cart[k].name, cart[k].size, cart[k].variant);
+                        }}
+                      >
+                        -
+                      </button>
+                      <span className="mx-2 text-sm font-medium text-gray-900">{cart[k].qty}</span>
+                      <button
+                        className="text-gray-500 hover:text-gray-700 transition duration-300"
+                        onClick={() => addToCart(k, 1, cart[k].price, cart[k].size, cart[k].variant)}
+                      >
+                        +
+                      </button>
+                    </div>
                     <div className="text-sm font-medium text-gray-900">₹{cart[k].price * cart[k].qty}</div>
                   </li>
                 ))}
               </ul>
-              <div className="mt-4 border-t border-gray-200 pt-4">
-                <div className="flex justify-between text-base font-medium text-gray-900">
-                  <span>Subtotal</span>
-                  <span>₹{subTotal}</span>
-                </div>
-                <p className="mt-0.5 text-sm text-gray-500">
-                  Shipping and taxes calculated at checkout.
-                </p>
+            )}
+            <div className="mt-4 border-t border-gray-200 pt-4">
+              <div className="flex justify-between text-base font-medium text-gray-900">
+                <span>Subtotal</span>
+                <span>₹{subTotal}</span>
               </div>
-              <div className="mt-6">
-                <button className="w-full bg-pink-500 text-white py-2 rounded-md shadow-sm hover:bg-pink-600 transition duration-300">
-                  Checkout
-                </button>
-                
-              </div>
-              <div className="mt-6 text-center text-sm text-gray-500">
-                <p>
-                  or <Link href="/" className="text-pink-500 hover:text-pink-600 transition duration-300">Continue Shopping</Link>
-                </p>
-              </div>
+              <p className="mt-0.5 text-sm text-gray-500">
+                Shipping and taxes calculated at checkout.
+              </p>
+            </div>
+            <div className="mt-6">
+              <Link href='/order'>
+              <button className="w-full bg-pink-500 text-white py-2 rounded-md shadow-sm hover:bg-pink-600 transition duration-300">
+                Checkout
+              </button>
+              </Link>
+            </div>
+            <div className="mt-6 text-center text-sm text-gray-500">
+              <p>
+                or <Link href="/" className="text-pink-500 hover:text-pink-600 transition duration-300">Continue Shopping</Link>
+              </p>
             </div>
           </div>
         </div>

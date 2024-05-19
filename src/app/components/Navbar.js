@@ -38,49 +38,49 @@ const Navbar = () => {
               <div className="ml-10 flex items-baseline space-x-4">
                 <Link
                   href="/tshirts"
-                  className="text-white hover:bg-pink-700 px-3 py-2 rounded-md text-lg font-semibold transition duration-300 ease-in-out"
+                  className="text-gray-200 hover:bg-pink-700 px-3 py-2 rounded-md text-lg font-semibold transition duration-300 ease-in-out"
                 >
                   Tshirts
                 </Link>
                 <Link
                   href="/hoodie"
-                  className="text-white hover:bg-pink-700 px-3 py-2 rounded-md text-lg font-semibold transition duration-300 ease-in-out"
+                  className="text-gray-200 hover:bg-pink-700 px-3 py-2 rounded-md text-lg font-semibold transition duration-300 ease-in-out"
                 >
                   Hoodies
                 </Link>
                 <Link
                   href="/sweatshirts"
-                  className="text-white hover:bg-pink-700 px-3 py-2 rounded-md text-lg font-semibold transition duration-300 ease-in-out"
+                  className="text-gray-200 hover:bg-pink-700 px-3 py-2 rounded-md text-lg font-semibold transition duration-300 ease-in-out"
                 >
                   SweatShirts
                 </Link>
                 <Link
                   href="/mugs"
-                  className="text-white hover:bg-pink-700 px-3 py-2 rounded-md text-lg font-semibold transition duration-300 ease-in-out"
+                  className="text-gray-200 hover:bg-pink-700 px-3 py-2 rounded-md text-lg font-semibold transition duration-300 ease-in-out"
                 >
                   Mugs
                 </Link>
                 <Link
                   href="/zipperhoodies"
-                  className="text-white hover:bg-pink-700 px-3 py-2 rounded-md text-lg font-semibold transition duration-300 ease-in-out"
+                  className="text-gray-200 hover:bg-pink-700 px-3 py-2 rounded-md text-lg font-semibold transition duration-300 ease-in-out"
                 >
                   Zipper Hoodies
                 </Link>
                 <Link
                   href="/mousepads"
-                  className="text-white hover:bg-pink-700 px-3 py-2 rounded-md text-lg font-semibold transition duration-300 ease-in-out"
+                  className="text-gray-200 hover:bg-pink-700 px-3 py-2 rounded-md text-lg font-semibold transition duration-300 ease-in-out"
                 >
                   MousePads
                 </Link>
                 <Link
                   href="/cups"
-                  className="text-white hover:bg-pink-700 px-3 py-2 rounded-md text-lg font-semibold transition duration-300 ease-in-out"
+                  className="text-gray-200 hover:bg-pink-700 px-3 py-2 rounded-md text-lg font-semibold transition duration-300 ease-in-out"
                 >
                   Cups
                 </Link>
                 <div
                   onClick={toggleSidebar}
-                  className="text-white cursor-pointer hover:bg-pink-700 px-3 py-2 rounded-md text-lg font-semibold transition duration-300 ease-in-out shopping-cart"
+                  className="text-gray-200 cursor-pointer hover:bg-pink-700 px-3 py-2 rounded-md text-lg font-semibold transition duration-300 ease-in-out shopping-cart"
                 >
                   <AiOutlineShoppingCart fontSize="1.4rem" />
                 </div>
@@ -90,14 +90,14 @@ const Navbar = () => {
           <div className="-mr-2 flex md:hidden">
             <div
               onClick={toggleSidebar}
-              className="text-white hover:bg-pink-700 px-3 py-2 rounded-md text-lg font-semibold transition duration-300 ease-in-out"
+              className="text-gray-200 hover:bg-pink-700 px-3 py-2 rounded-md text-lg font-semibold transition duration-300 ease-in-out"
             >
               <AiOutlineShoppingCart fontSize="1.4rem" />
             </div>
             <button
               onClick={toggleNavbar}
               type="button"
-              className="bg-pink-900 inline-flex items-center justify-center p-2 rounded-md text-pink-400 hover:text-white hover:bg-pink-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-pink-800 focus:ring-white"
+              className="bg-pink-900 inline-flex items-center justify-center p-2 rounded-md text-pink-400 hover:text-gray-200 hover:bg-pink-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-pink-800 focus:ring-white"
               aria-controls="mobile-menu"
               aria-expanded="false"
             >
@@ -121,43 +121,43 @@ const Navbar = () => {
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
           <Link
             href="/tshirts"
-            className="text-white hover:bg-pink-700 block px-3 py-2 rounded-md text-base font-medium transition duration-300 ease-in-out"
+            className="text-gray-200 hover:bg-pink-700 block px-3 py-2 rounded-md text-base font-medium transition duration-300 ease-in-out"
           >
             Tshirts
           </Link>
           <Link
             href="/hoodie"
-            className="text-white hover:bg-pink-700 block px-3 py-2 rounded-md text-base font-medium transition duration-300 ease-in-out"
+            className="text-gray-200 hover:bg-pink-700 block px-3 py-2 rounded-md text-base font-medium transition duration-300 ease-in-out"
           >
             Hoodies
           </Link>
           <Link
             href="/sweatshirts"
-            className="text-white hover:bg-pink-700 block px-3 py-2 rounded-md text-base font-medium transition duration-300 ease-in-out"
+            className="text-gray-200 hover:bg-pink-700 block px-3 py-2 rounded-md text-base font-medium transition duration-300 ease-in-out"
           >
             Sweat Shirts
           </Link>
           <Link
             href="/mugs"
-            className="text-white hover:bg-pink-700 block px-3 py-2 rounded-md text-base font-medium transition duration-300 ease-in-out"
+            className="text-gray-200 hover:bg-pink-700 block px-3 py-2 rounded-md text-base font-medium transition duration-300 ease-in-out"
           >
             Mugs
           </Link>
           <Link
             href="/zipperhoodies"
-            className="text-white hover:bg-pink-700 block px-3 py-2 rounded-md text-base font-medium transition duration-300 ease-in-out"
+            className="text-gray-200 hover:bg-pink-700 block px-3 py-2 rounded-md text-base font-medium transition duration-300 ease-in-out"
           >
             Zipper Hoodies
           </Link>
           <Link
             href="/mousepads"
-            className="text-white hover:bg-pink-700 block px-3 py-2 rounded-md text-base font-medium transition duration-300 ease-in-out"
+            className="text-gray-200 hover:bg-pink-700 block px-3 py-2 rounded-md text-base font-medium transition duration-300 ease-in-out"
           >
             MousePads
           </Link>
           <Link
             href="/cups"
-            className="text-white hover:bg-pink-700 block px-3 py-2 rounded-md text-base font-medium transition duration-300 ease-in-out"
+            className="text-gray-200 hover:bg-pink-700 block px-3 py-2 rounded-md text-base font-medium transition duration-300 ease-in-out"
           >
             Cups
           </Link>
@@ -176,55 +176,82 @@ const Navbar = () => {
 
       {/* Sidebar */}
       <div
-        className={`fixed top-0  z-10 right-0 h-full w-80 bg-gradient-to-r from-pink-800 to-pink-500 transition-transform duration-300  ${
+        className={`fixed top-0 z-10 right-0 h-full w-80 bg-gradient-to-r from-pink-800 to-pink-500 transition-transform duration-300 ${
           isSidebarOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <div className="relative h-full">
-          <div className="p-6">
-            <h2 className="font-bold text-xl text-center mb-4">Shopping Cart</h2>
+        <div className="relative h-full flex flex-col">
+          <div className="p-6 flex-grow">
+            <h2 className="font-bold text-gray-200 text-xl text-center mb-4">Shopping Cart</h2>
             <ol className="space-y-4">
               {/* Cart items */}
-              {Object.keys(cart).length ===0 && <div className="my-4 text-base font-normal">Your Cart is empty</div>}
-             {Object.keys(cart).map((k)=>{return( 
-             <li key={k}>
-                <div className="item flex justify-between">
-                  <div className="font-semibold">{cart[k].name}</div>
-                  <div className="flex items-center">
-                    <button className="text-pink-500 text-2xl">
-                      <AiOutlineMinus  onClick={()=>{removeFromCart(k,1,cart[k].price,cart[k].name,cart[k].size,cart[k].variant)}}/>
-                    </button>
-                    <span className="mx-2">{cart[k].qty}</span>
-                    <button className="text-pink-500 text-2xl">
-                      <AiOutlinePlus onClick={()=>{addToCart(k,1,cart[k].price,cart[k].name,cart[k].size,cart[k].variant)}}/>
-                    </button>
+              {Object.keys(cart).length === 0 && (
+                <div className="my-4 text-base font-normal">Your Cart is empty</div>
+              )}
+              {Object.keys(cart).map((k) => (
+                <li key={k}>
+                  <div className="item flex justify-between">
+                    <div className="font-semibold text-gray-200">{cart[k].name}</div>
+                    <div className="flex items-center">
+                      <button className="text-pink-500 text-2xl">
+                        <AiOutlineMinus
+                          onClick={() => {
+                            removeFromCart(
+                              k,
+                              1,
+                              cart[k].price,
+                              cart[k].name,
+                              cart[k].size,
+                              cart[k].variant
+                            );
+                          }}
+                        />
+                      </button>
+                      <span className="mx-2 text-gray-200">{cart[k].qty}</span>
+                      <button className="text-pink-500 text-2xl">
+                        <AiOutlinePlus
+                          onClick={() => {
+                            addToCart(
+                              k,
+                              1,
+                              cart[k].price,
+                              cart[k].name,
+                              cart[k].size,
+                              cart[k].variant
+                            );
+                          }}
+                        />
+                      </button>
+                    </div>
                   </div>
-                </div>
-              </li>)})}
-              
-              {/* Add more cart items */}
+                </li>
+              ))}
             </ol>
           </div>
-          <div className="mt-auto p-6bg-gradient-to-r  from-pink-800 to-pink-500 border-t">
-          {/* <div className="flex justify-between items-center mb-4">
-            <span className="font-semibold text-lg text-gray-700">Total:</span>
-            <span className="font-bold text-lg text-gray-900">₹2000</span>
-          </div> */}
-       <Link href='/checkout'> <button className="flex items-center justify-center w-full text-white bg-pink-500 py-2 mt-1 mb-2 focus:outline-none hover:bg-pink-600 rounded text-lg transition duration-300">
-            <BsFillBagHeartFill className="mr-2" />
-            Checkout
-          </button>
-          </Link>
-          <button onClick={clearCart} className="flex items-center justify-center w-full text-white bg-red-500 border-0 py-2 focus:outline-none hover:bg-red-600 rounded text-lg transition duration-300">
-            Clear Cart
-          </button>
-        </div>
-    <button
-      onClick={toggleSidebar}
-      className="absolute top-4 right-4 text-white text-2xl"
-    >
-      <AiOutlineClose />
-    </button>
+          <div className="p-6 bg-gradient-to-r from-pink-800 to-pink-500 border-t flex flex-col space-y-4">
+            <div className="flex justify-between items-center mb-4">
+              <span className="font-semibold text-lg text-gray-200">Total:</span>
+              <span className="font-bold text-lg text-gray-200">₹{subTotal}</span>
+            </div>
+            <Link href="/checkout">
+              <button className="flex items-center justify-center w-full text-gray-200 bg-pink-500 py-2 focus:outline-none hover:bg-pink-600 rounded text-lg transition duration-300">
+                <BsFillBagHeartFill className="mr-2" />
+                Checkout
+              </button>
+            </Link>
+            <button
+              onClick={clearCart}
+              className="flex items-center justify-center w-full text-gray-200 bg-red-500 border-0 py-2 focus:outline-none hover:bg-red-600 rounded text-lg transition duration-300"
+            >
+              Clear Cart
+            </button>
+            <button
+              onClick={toggleSidebar}
+              className="absolute top-4 right-4 text-gray-200 text-2xl"
+            >
+              <AiOutlineClose />
+            </button>
+          </div>
         </div>
       </div>
     </nav>
