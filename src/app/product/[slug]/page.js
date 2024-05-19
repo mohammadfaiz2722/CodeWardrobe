@@ -3,7 +3,8 @@ import { useRouter } from "next/navigation";
 import { AiOutlineStar, AiFillStar } from "react-icons/ai";
 import { FaFacebookF, FaTwitter, FaWhatsapp } from "react-icons/fa";
 import { useState } from "react";
-
+import { useContext } from 'react';
+import { CartContext } from "@/app/cartContext";
 const PostPage = ({ params }) => {
   const router = useRouter();
   const [pinCode, setPinCode] = useState("");
@@ -37,6 +38,7 @@ const PostPage = ({ params }) => {
       }
     
   };
+  const { cart, addToCart, removeFromCart, clearCart } = useContext(CartContext);
   return (
     <div className="bg-gray-100 min-h-screen">
       <section className="text-gray-700 body-font overflow-hidden">
@@ -133,8 +135,8 @@ const PostPage = ({ params }) => {
                 >
                 Buy Now
                 </button>
-                <butto
-                  className="flex text-white  ml-2 bg-pink-500 border-0 py-2 md:px-6 focus:outline-none hover:bg-pink-600 rounded text-lg transition duration-300 "
+                <butto onClick={()=>{addToCart(params.slug,1,499,"Wear the Code(XL/Blue)","XL","RED")}}
+                  className="flex cursor-pointer text-white  ml-2 bg-pink-500 border-0 py-2 md:px-6 focus:outline-none hover:bg-pink-600 rounded text-lg transition duration-300 "
                 >
                   Add to Cart
                 </butto>
