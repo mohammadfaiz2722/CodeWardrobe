@@ -1,124 +1,66 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
+import { FaTwitter, FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa'
 
 const Footer = () => {
   return (
-    <div>
-  <footer className="text-gray-600 body-font">
-  <div className="container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
-    <div className="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
-    
-      <Link href="/" className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
-        <Image src="/logo.png" alt="" width={200} height={40} />
-      </Link>
-      
-      <p className="mt-2 px-4 text-sm text-gray-500">Air plant banjo lyft occupy retro adaptogen indego</p>
-    </div>
-    <div className="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center">
-      <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-        <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">CATEGORIES</h2>
-        <nav className="list-none mb-10">
-          <li>
-            <a className="text-gray-600 hover:text-gray-800">First Link</a>
-          </li>
-          <li>
-            <a className="text-gray-600 hover:text-gray-800">Second Link</a>
-          </li>
-          <li>
-            <a className="text-gray-600 hover:text-gray-800">Third Link</a>
-          </li>
-          <li>
-            <a className="text-gray-600 hover:text-gray-800">Fourth Link</a>
-          </li>
-        </nav>
+    <footer className="bg-gray-900 text-white">
+      <div className="container mx-auto px-6 pt-12 pb-6">
+        <div className="flex flex-wrap justify-between">
+          <div className="w-full md:w-1/4 mb-8 md:mb-0">
+            <Link href="/" className="flex items-center">
+              <Image src="/logo.png" alt="" width={200} height={40} className="mr-3" />
+              {/* <span className="font-bold text-xl tracking-tight">Your Brand</span> */}
+            </Link>
+            <p className="mt-2 text-gray-400">Crafting exceptional digital experiences.</p>
+          </div>
+          <div className="w-full md:w-1/4 mb-8 md:mb-0">
+            <h4 className="font-bold mb-4">Company</h4>
+            <nav className="list-none">
+              <li><a href="#" className="text-gray-400 hover:text-white">About</a></li>
+              <li><a href="#" className="text-gray-400 hover:text-white">Careers</a></li>
+              <li><a href="#" className="text-gray-400 hover:text-white">Blog</a></li>
+              <li><a href="#" className="text-gray-400 hover:text-white">Contact</a></li>
+            </nav>
+          </div>
+          <div className="w-full md:w-1/4 mb-8 md:mb-0">
+            <h4 className="font-bold mb-4">Resources</h4>
+            <nav className="list-none">
+              <li><a href="#" className="text-gray-400 hover:text-white">Help Center</a></li>
+              <li><a href="#" className="text-gray-400 hover:text-white">Developers</a></li>
+              <li><a href="#" className="text-gray-400 hover:text-white">Guides</a></li>
+              <li><a href="#" className="text-gray-400 hover:text-white">Partners</a></li>
+            </nav>
+          </div>
+          <div className="w-full md:w-1/4">
+            <h4 className="font-bold mb-4">Follow Us</h4>
+            <div className="flex">
+              <a href="#" className="text-gray-400 hover:text-white mr-4">
+                <FaTwitter className="w-5 h-5 fill-current" />
+              </a>
+              <a href="#" className="text-gray-400 hover:text-white mr-4">
+                <FaFacebook className="w-5 h-5 fill-current" />
+              </a>
+              <a href="#" className="text-gray-400 hover:text-white mr-4">
+                <FaInstagram className="w-5 h-5 fill-current" />
+              </a>
+              <a href="#" className="text-gray-400 hover:text-white">
+                <FaLinkedin className="w-5 h-5 fill-current" />
+              </a>
+            </div>
+          </div>
+        </div>
+        <div className="mt-8 border-t border-gray-700 pt-8 flex flex-col md:flex-row items-center justify-between">
+          <p className="text-gray-400">© 2023 Your Brand. All rights reserved.</p>
+          <nav className="mt-4 md:mt-0">
+            <a href="#" className="text-gray-400 hover:text-white mr-4">Privacy Policy</a>
+            <a href="#" className="text-gray-400 hover:text-white mr-4">Terms of Use</a>
+            <a href="#" className="text-gray-400 hover:text-white">Accessibility</a>
+          </nav>
+        </div>
       </div>
-      <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-        <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">CATEGORIES</h2>
-        <nav className="list-none mb-10">
-          <li>
-            <a className="text-gray-600 hover:text-gray-800">First Link</a>
-          </li>
-          <li>
-            <a className="text-gray-600 hover:text-gray-800">Second Link</a>
-          </li>
-          <li>
-            <a className="text-gray-600 hover:text-gray-800">Third Link</a>
-          </li>
-          <li>
-            <a className="text-gray-600 hover:text-gray-800">Fourth Link</a>
-          </li>
-        </nav>
-      </div>
-      <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-        <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">CATEGORIES</h2>
-        <nav className="list-none mb-10">
-          <li>
-            <a className="text-gray-600 hover:text-gray-800">First Link</a>
-          </li>
-          <li>
-            <a className="text-gray-600 hover:text-gray-800">Second Link</a>
-          </li>
-          <li>
-            <a className="text-gray-600 hover:text-gray-800">Third Link</a>
-          </li>
-          <li>
-            <a className="text-gray-600 hover:text-gray-800">Fourth Link</a>
-          </li>
-        </nav>
-      </div>
-      <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-        <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">CATEGORIES</h2>
-        <nav className="list-none mb-10">
-          <li>
-            <a className="text-gray-600 hover:text-gray-800">First Link</a>
-          </li>
-          <li>
-            <a className="text-gray-600 hover:text-gray-800">Second Link</a>
-          </li>
-          <li>
-            <a className="text-gray-600 hover:text-gray-800">Third Link</a>
-          </li>
-          <li>
-            <a className="text-gray-600 hover:text-gray-800">Fourth Link</a>
-          </li>
-        </nav>
-      </div>
-    </div>
-  </div>
-  <div className="bg-gray-100">
-    <div className="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
-      <p className="text-gray-500 text-sm text-center sm:text-left">© 2020 Tailblocks —
-        <a href="https://twitter.com/knyttneve" rel="noopener noreferrer" className="text-gray-600 ml-1" target="_blank">@knyttneve</a>
-      </p>
-      <span className="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
-        <a className="text-gray-500">
-          <svg fill="currentColor" stroke-linecap="round" strokeLinejoin="round" strokeWidth="2" className="w-5 h-5" viewBox="0 0 24 24">
-            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
-          </svg>
-        </a>
-        <a className="ml-3 text-gray-500">
-          <svg fill="currentColor" stroke-linecap="round" strokeLinejoin="round" strokeWidth="2" className="w-5 h-5" viewBox="0 0 24 24">
-            <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
-          </svg>
-        </a>
-        <a className="ml-3 text-gray-500">
-          <svg fill="none" stroke="currentColor" stroke-linecap="round" strokeLinejoin="round" strokeWidth="2" className="w-5 h-5" viewBox="0 0 24 24">
-            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
-            <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
-          </svg>
-        </a>
-        <a className="ml-3 text-gray-500">
-          <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" strokeLinejoin="round" strokeWidth="0" className="w-5 h-5" viewBox="0 0 24 24">
-            <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
-            <circle cx="4" cy="4" r="2" stroke="none"></circle>
-          </svg>
-        </a>
-      </span>
-    </div>
-  </div>
-</footer>
-    </div>
+    </footer>
   )
 }
 

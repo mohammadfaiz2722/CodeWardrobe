@@ -6,6 +6,8 @@ import Image from "next/image";
 import { AiOutlineShoppingCart, AiOutlineClose, AiOutlineMenu,AiOutlineMinus,AiOutlinePlus } from "react-icons/ai";
 import { BsFillBagHeartFill } from "react-icons/bs";
 import { CartContext } from "../cartContext";
+import { MdAccountCircle } from "react-icons/md";
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -79,21 +81,29 @@ const Navbar = () => {
                   Cups
                 </Link>
                 <div
-                  onClick={toggleSidebar}
-                  className="text-gray-200 cursor-pointer hover:bg-pink-700 px-3 py-2 rounded-md text-lg font-semibold transition duration-300 ease-in-out shopping-cart"
+                  
+                  className="text-gray-200 cursor-pointer flex   px-3 py-2 rounded-md text-lg font-semibold transition duration-300 ease-in-out shopping-cart"
                 >
-                  <AiOutlineShoppingCart fontSize="1.4rem" />
+                  <AiOutlineShoppingCart fontSize="1.6rem " onClick={toggleSidebar}/>
+                  {/* <MdAccountCircle fontSize="1.6rem" className="ml-5"/> */}
+                  <Link href='/login'>
+              <MdAccountCircle fontSize="1.4rem" className="ml-4"/>
+              </Link>
                 </div>
               </div>
             </div>
           </div>
           <div className="-mr-2 flex md:hidden">
             <div
-              onClick={toggleSidebar}
-              className="text-gray-200 hover:bg-pink-700 px-3 py-2 rounded-md text-lg font-semibold transition duration-300 ease-in-out"
+              
+              className="text-gray-200 hover:bg-pink-700 flex px-3 py-2 rounded-md text-lg font-semibold transition duration-300 ease-in-out"
             >
-              <AiOutlineShoppingCart fontSize="1.4rem" />
+              <AiOutlineShoppingCart onClick={toggleSidebar} fontSize="1.4rem" />
+              <Link href='/login'>
+              <MdAccountCircle fontSize="1.4rem" className="ml-4"/>
+              </Link>
             </div>
+           
             <button
               onClick={toggleNavbar}
               type="button"
