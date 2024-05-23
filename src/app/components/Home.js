@@ -1,9 +1,10 @@
 import React from 'react';
 import './Home.css';
-
+// import ProductViewer from './ProductViewer';
 const Homepage = () => {
   return (
     <>
+    {/* <ProductViewer/> */}
       <div className="relative">
         <img
           src="/homeharry.jpg"
@@ -110,8 +111,8 @@ const Homepage = () => {
             <div className="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 ease-in-out hover:-translate-y-2">
               <img src="https://m.media-amazon.com/images/I/51BaWHbbziL._SL1402_.jpg" alt="Product 1" className="w-full object-cover" />
               <div className="p-4 text-center">
-                <h3 className="text-xl font-bold mb-2">Product 1</h3>
-                <p className="text-gray-700 mb-4">$29.99</p>
+                <h3 className="text-xl font-bold mb-2">Hoodies</h3>
+                <p className="text-gray-700 mb-4">₹499.00</p>
                 <a
                   href="#"
                   className="bg-blue-600 text-white py-2 px-4 rounded-full hover:bg-blue-700 transition-colors duration-300"
@@ -123,8 +124,8 @@ const Homepage = () => {
             <div className="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 ease-in-out hover:-translate-y-2">
               <img src="https://m.media-amazon.com/images/I/51BaWHbbziL._SL1402_.jpg" alt="Product 1" className="w-full object-cover" />
               <div className="p-4 text-center">
-                <h3 className="text-xl font-bold mb-2">Product 1</h3>
-                <p className="text-gray-700 mb-4">$29.99</p>
+                <h3 className="text-xl font-bold mb-2">Hoodies</h3>
+                <p className="text-gray-700 mb-4">₹499.00</p>
                 <a
                   href="#"
                   className="bg-blue-600 text-white py-2 px-4 rounded-full hover:bg-blue-700 transition-colors duration-300"
@@ -136,8 +137,8 @@ const Homepage = () => {
             <div className="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 ease-in-out hover:-translate-y-2">
               <img src="https://m.media-amazon.com/images/I/51BaWHbbziL._SL1402_.jpg" alt="Product 1" className="w-full object-cover" />
               <div className="p-4 text-center">
-                <h3 className="text-xl font-bold mb-2">Product 1</h3>
-                <p className="text-gray-700 mb-4">$29.99</p>
+                <h3 className="text-xl font-bold mb-2">Hoodies</h3>
+                <p className="text-gray-700 mb-4">₹499.00</p>
                 <a
                   href="#"
                   className="bg-blue-600 text-white py-2 px-4 rounded-full hover:bg-blue-700 transition-colors duration-300"
@@ -149,8 +150,8 @@ const Homepage = () => {
             <div className="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 ease-in-out hover:-translate-y-2">
               <img src="https://m.media-amazon.com/images/I/51BaWHbbziL._SL1402_.jpg" alt="Product 1" className="w-full object-cover" />
               <div className="p-4 text-center">
-                <h3 className="text-xl font-bold mb-2">Product 1</h3>
-                <p className="text-gray-700 mb-4">$29.99</p>
+                <h3 className="text-xl font-bold mb-2">Hoodies</h3>
+                <p className="text-gray-700 mb-4">₹499.00</p>
                 <a
                   href="#"
                   className="bg-blue-600 text-white py-2 px-4 rounded-full hover:bg-blue-700 transition-colors duration-300"
@@ -162,8 +163,8 @@ const Homepage = () => {
             <div className="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 ease-in-out hover:-translate-y-2">
               <img src="https://m.media-amazon.com/images/I/51BaWHbbziL._SL1402_.jpg" alt="Product 1" className="w-full object-cover" />
               <div className="p-4 text-center">
-                <h3 className="text-xl font-bold mb-2">Product 1</h3>
-                <p className="text-gray-700 mb-4">$29.99</p>
+                <h3 className="text-xl font-bold mb-2">Hoodies</h3>
+                <p className="text-gray-700 mb-4">₹499.00</p>
                 <a
                   href="#"
                   className="bg-blue-600 text-white py-2 px-4 rounded-full hover:bg-blue-700 transition-colors duration-300"
@@ -175,8 +176,8 @@ const Homepage = () => {
             <div className="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 ease-in-out hover:-translate-y-2">
               <img src="https://m.media-amazon.com/images/I/51BaWHbbziL._SL1402_.jpg" alt="Product 1" className="w-full object-cover" />
               <div className="p-4 text-center">
-                <h3 className="text-xl font-bold mb-2">Product 1</h3>
-                <p className="text-gray-700 mb-4">$29.99</p>
+                <h3 className="text-xl font-bold mb-2">Hoodies</h3>
+                <p className="text-gray-700 mb-4">₹499.00</p>
                 <a
                   href="#"
                   className="bg-blue-600 text-white py-2 px-4 rounded-full hover:bg-blue-700 transition-colors duration-300"
@@ -188,8 +189,8 @@ const Homepage = () => {
             <div className="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 ease-in-out hover:-translate-y-2">
               <img src="https://m.media-amazon.com/images/I/51BaWHbbziL._SL1402_.jpg" alt="Product 1" className="w-full object-cover" />
               <div className="p-4 text-center">
-                <h3 className="text-xl font-bold mb-2">Product 1</h3>
-                <p className="text-gray-700 mb-4">$29.99</p>
+                <h3 className="text-xl font-bold mb-2">Hoodies</h3>
+                <p className="text-gray-700 mb-4">₹499.00</p>
                 <a
                   href="#"
                   className="bg-blue-600 text-white py-2 px-4 rounded-full hover:bg-blue-700 transition-colors duration-300"
@@ -201,8 +202,8 @@ const Homepage = () => {
             <div className="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 ease-in-out hover:-translate-y-2">
               <img src="https://m.media-amazon.com/images/I/51BaWHbbziL._SL1402_.jpg" alt="Product 1" className="w-full object-cover" />
               <div className="p-4 text-center">
-                <h3 className="text-xl font-bold mb-2">Product 1</h3>
-                <p className="text-gray-700 mb-4">$29.99</p>
+                <h3 className="text-xl font-bold mb-2">Hoodies</h3>
+                <p className="text-gray-700 mb-4">₹499.00</p>
                 <a
                   href="#"
                   className="bg-blue-600 text-white py-2 px-4 rounded-full hover:bg-blue-700 transition-colors duration-300"
@@ -214,8 +215,8 @@ const Homepage = () => {
             <div className="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 ease-in-out hover:-translate-y-2">
               <img src="https://m.media-amazon.com/images/I/51BaWHbbziL._SL1402_.jpg" alt="Product 1" className="w-full object-cover" />
               <div className="p-4 text-center">
-                <h3 className="text-xl font-bold mb-2">Product 1</h3>
-                <p className="text-gray-700 mb-4">$29.99</p>
+                <h3 className="text-xl font-bold mb-2">Hoodies</h3>
+                <p className="text-gray-700 mb-4">₹499.00</p>
                 <a
                   href="#"
                   className="bg-blue-600 text-white py-2 px-4 rounded-full hover:bg-blue-700 transition-colors duration-300"
@@ -227,8 +228,8 @@ const Homepage = () => {
             <div className="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 ease-in-out hover:-translate-y-2">
               <img src="https://m.media-amazon.com/images/I/51BaWHbbziL._SL1402_.jpg" alt="Product 1" className="w-full object-cover" />
               <div className="p-4 text-center">
-                <h3 className="text-xl font-bold mb-2">Product 1</h3>
-                <p className="text-gray-700 mb-4">$29.99</p>
+                <h3 className="text-xl font-bold mb-2">Hoodies</h3>
+                <p className="text-gray-700 mb-4">₹499.00</p>
                 <a
                   href="#"
                   className="bg-blue-600 text-white py-2 px-4 rounded-full hover:bg-blue-700 transition-colors duration-300"
@@ -240,8 +241,8 @@ const Homepage = () => {
             <div className="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 ease-in-out hover:-translate-y-2">
               <img src="https://m.media-amazon.com/images/I/51BaWHbbziL._SL1402_.jpg" alt="Product 1" className="w-full object-cover" />
               <div className="p-4 text-center">
-                <h3 className="text-xl font-bold mb-2">Product 1</h3>
-                <p className="text-gray-700 mb-4">$29.99</p>
+                <h3 className="text-xl font-bold mb-2">Hoodies</h3>
+                <p className="text-gray-700 mb-4">₹499.00</p>
                 <a
                   href="#"
                   className="bg-blue-600 text-white py-2 px-4 rounded-full hover:bg-blue-700 transition-colors duration-300"
@@ -253,8 +254,8 @@ const Homepage = () => {
             <div className="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 ease-in-out hover:-translate-y-2">
               <img src="https://m.media-amazon.com/images/I/51BaWHbbziL._SL1402_.jpg" alt="Product 1" className="w-full object-cover" />
               <div className="p-4 text-center">
-                <h3 className="text-xl font-bold mb-2">Product 1</h3>
-                <p className="text-gray-700 mb-4">$29.99</p>
+                <h3 className="text-xl font-bold mb-2">Hoodies</h3>
+                <p className="text-gray-700 mb-4">₹499.00</p>
                 <a
                   href="#"
                   className="bg-blue-600 text-white py-2 px-4 rounded-full hover:bg-blue-700 transition-colors duration-300"
