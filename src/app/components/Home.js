@@ -30,7 +30,7 @@ const Homepage = () => {
           <h2 className="text-5xl font-bold mb-6">Why CodeWarDrobe?</h2>
           <p className="text-gray-700 text-lg">Unleash your inner programmer with style.</p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 cursor-pointer">
           <div className="bg-gradient-to-r from-pink-500 to-yellow-500 text-white rounded-lg p-6 flex flex-col items-center transition-transform duration-300 ease-in-out hover:-translate-y-2 shadow-lg">
             <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-4 shadow-lg">
               <svg
