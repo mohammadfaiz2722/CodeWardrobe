@@ -1,26 +1,48 @@
 "use client";
-import { useRouter } from "next/navigation";
 import { AiOutlineStar, AiFillStar } from "react-icons/ai";
 import { FaFacebookF, FaTwitter, FaWhatsapp } from "react-icons/fa";
 import { useState } from "react";
 import { useContext } from 'react';
 import { CartContext } from "@/app/cartContext";
 import Link from "next/link";
+async function fetchData() {
+  try {
+    await mongoose.connect(process.env.MONGO_URI);
+    console.log("MongoDB connected successfully");
+  } catch (error) {
+    console.error("Error connecting to MongoDB:", error);
+    throw new Error("Error connecting to MongoDB");
+  }
+  let products=await Product.findOne({slug:params.slug})
+  let variants=await Product.find({title:products.title}) 
+  let colorSizeSlug={}//{red:{Xl:{slug:'wear-the-code-xl"}}}
+  for(let item of variants)
+  {
+if(Object.keys(colorSizeSlug).includes(item.color))
+  {
+    colorSizeSlug[item.color][item.size]={slug:item.slug}
+  }
+  else{
+    colorSizeSlug[item.color]={}
+    colorSizeSlug[item.color][item.size]={slug:item.slug}
+    
+  }
+  }
+  return {colorSizeSlug,products};
+}
+
 const PostPage = ({ params }) => {
-  const router = useRouter();
   const [pinCode, setPinCode] = useState("");
   const [isAvailable, setIsAvailable] = useState(null);
+  const {addToCart } = useContext(CartContext);
+
+
+  
 
 
   const handlePinCodeChange = (e) => {
     setPinCode(e.target.value);
   };
-
-  // const checkAvailability = () => {
-  //   // Replace this with your actual logic to check availability based on the pinCode
-  //   const isProductAvailable = pinCode === "123456"; // Example: Product is available for PIN code 123456
-  //   setIsAvailable(isProductAvailable);
-  // };
 
   const checkAvailability = async () => {
     
@@ -39,7 +61,9 @@ const PostPage = ({ params }) => {
       }
     
   };
-  const { cart, addToCart, removeFromCart, clearCart } = useContext(CartContext);
+
+  
+
   return (
     <div className="bg-gray-100 min-h-screen">
       <section className="text-gray-700 body-font overflow-hidden">

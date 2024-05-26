@@ -1,6 +1,7 @@
 import React from 'react';
 
 const OrderPage = () => {
+ 
   return (
     <div className="bg-gray-100 min-h-screen">
       <section className="text-gray-700 body-font overflow-hidden">
