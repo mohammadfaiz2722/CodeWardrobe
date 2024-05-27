@@ -2,7 +2,7 @@ import { AiOutlineStar, AiFillStar } from "react-icons/ai";
 import { FaFacebookF, FaTwitter, FaWhatsapp } from "react-icons/fa";
 import Link from "next/link";
 
-import Pincode from "./pincode";
+import Pincode from "./Pincode";
 import mongoose from "mongoose";
 import Product from "../../../../models/Product";
 
@@ -34,7 +34,7 @@ const PostPage = async({ params }) => {
   }
  
   const { colorSizeSlug, products } = await fetchData(params);
-  console.log(products);
+  // console.log(products);
   
   return (
     <div className="bg-gray-100 min-h-screen">
@@ -51,7 +51,7 @@ const PostPage = async({ params }) => {
                 CodeWardrobe.com
               </h2>
               <h1 className="text-gray-900 text-3xl title-font font-medium mb-4">
-                Where style meets code. (XL/Blue)
+               {products.title}
               </h1>
               <div className="flex mb-4">
                 <span className="flex items-center">
@@ -125,7 +125,7 @@ const PostPage = async({ params }) => {
               </div>
               <div className="flex justify-between items-center mb-4">
                 <span className="title-font font-medium text-2xl text-gray-900">
-                  ₹499.00
+                ₹{products.price}
                 </span>
                 <Link href='/checkout'>
                   <button

@@ -37,9 +37,10 @@ const Navbar = () => {
               </Link>
             </div>
             <div className="hidden md:block md:text-3xl">
-              <div className="ml-10 flex items-baseline space-x-4">
+              <div className="ml-10 flex items-baseline space-x-4"  id="selection">
                 <Link
                   href="/tshirts"
+                 
                   className="text-gray-200 hover:bg-pink-700 px-3 py-2 rounded-md text-lg font-semibold transition duration-300 ease-in-out"
                 >
                   Tshirts

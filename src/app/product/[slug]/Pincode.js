@@ -12,7 +12,9 @@ const Pincode = ({ slug }) => {
   };
 
   const checkAvailability = async () => {
+    console.log("Hello");
     let response = await fetch('http://localhost:3000/api/pincode');
+    console.log(response);
     let pinsjson = await response.json();
     console.log('Received PIN codes:', pinsjson);
 
@@ -35,7 +37,7 @@ const Pincode = ({ slug }) => {
         />
         <button
           onClick={checkAvailability}
-          className="text-white py-2 px-6 rounded bg-pink-500 focus:outline-none hover:bg-pink-600 transition duration-300"
+          className="text-white  px-6 rounded bg-pink-500 focus:outline-none hover:bg-pink-600 transition duration-300"
         >
           Check Availability
         </button>
