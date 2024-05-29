@@ -108,7 +108,7 @@ const Homepage = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Repeat this block for each featured product */}
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 ease-in-out hover:-translate-y-2">
+            {/* <div className="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 ease-in-out hover:-translate-y-2">
               <img src="https://m.media-amazon.com/images/I/51BaWHbbziL._SL1402_.jpg" alt="Product 1" className="w-full object-cover" />
               <div className="p-4 text-center">
                 <h3 className="text-xl font-bold mb-2">Hoodies</h3>
@@ -263,7 +263,7 @@ const Homepage = () => {
                   Buy Now
                 </a>
               </div>
-            </div>
+            </div> */}
             {/* Add more products as needed */}
           </div>
         </div>

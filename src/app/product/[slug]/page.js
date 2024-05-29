@@ -34,7 +34,6 @@ const PostPage = async({ params }) => {
   }
  
   const { colorSizeSlug, products } = await fetchData(params);
-  // console.log(products);
   
   return (
     <div className="bg-gray-100 min-h-screen">
@@ -129,7 +128,7 @@ const PostPage = async({ params }) => {
                 </span>
                 <Link href='/checkout'>
                   <button
-                    className="flex text-white bg-pink-500 border-0 py-2 md:px-6 focus:outline-none hover:bg-pink-600 rounded text-lg transition duration-300"
+                    className="flex text-white bg-pink-500 border-0 py-2  px-4 md:px-6 focus:outline-none hover:bg-pink-600 rounded text-lg transition duration-300"
                   >
                     Buy Now
                   </button>

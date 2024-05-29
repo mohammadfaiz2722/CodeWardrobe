@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useContext, useState } from "react";
 import "./Navbar.css";
 import Image from "next/image";
-import { AiOutlineShoppingCart, AiOutlineClose, AiOutlineMenu,AiOutlineMinus,AiOutlinePlus } from "react-icons/ai";
+import { AiOutlineShoppingCart, AiOutlineClose, AiOutlineMenu, AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import { BsFillBagHeartFill } from "react-icons/bs";
 import { CartContext } from "../cartContext";
 import { MdAccountCircle } from "react-icons/md";
@@ -19,92 +19,99 @@ const Navbar = () => {
   const toggleNavbar = () => {
     setIsOpen(!isOpen);
   };
-  const { cart, addToCart, removeFromCart, clearCart ,subTotal} = useContext(CartContext);
+
+  const handleLinkClick = () => {
+    setIsOpen(false);
+  };
+
+  const { cart, addToCart, removeFromCart, clearCart, subTotal } = useContext(CartContext);
+
   return (
-    <nav className="sticky-navbar bg-gradient-to-r from-pink-800 to-pink-500 shadow-xl ">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
+    <nav className="sticky-navbar bg-gradient-to-r from-pink-800 to-pink-500 shadow-xl">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <div className="flex items-center">
             <div className="flex-shrink-0">
-              <Link href="/">
+              <Link href="/" onClick={handleLinkClick}>
                 <Image
-                  src="/logo.png"
+                  src="/latest.png"
                   alt=""
-                  width={200}
-                  height={40}
-                  className="rounded-lg"
+                  width={230}
+                  height={60}
+                  className="rounded-lg logo"
                 />
               </Link>
             </div>
             <div className="hidden md:block md:text-3xl">
-              <div className="ml-10 flex items-baseline space-x-4"  id="selection">
+              <div className="ml-10 flex items-baseline space-x-4" id="selection">
                 <Link
                   href="/tshirts"
-                 
                   className="text-gray-200 hover:bg-pink-700 px-3 py-2 rounded-md text-lg font-semibold transition duration-300 ease-in-out"
+                  onClick={handleLinkClick}
                 >
                   Tshirts
                 </Link>
                 <Link
                   href="/hoodie"
                   className="text-gray-200 hover:bg-pink-700 px-3 py-2 rounded-md text-lg font-semibold transition duration-300 ease-in-out"
+                  onClick={handleLinkClick}
                 >
                   Hoodies
                 </Link>
                 <Link
                   href="/sweatshirts"
                   className="text-gray-200 hover:bg-pink-700 px-3 py-2 rounded-md text-lg font-semibold transition duration-300 ease-in-out"
+                  onClick={handleLinkClick}
                 >
                   SweatShirts
                 </Link>
                 <Link
                   href="/mugs"
                   className="text-gray-200 hover:bg-pink-700 px-3 py-2 rounded-md text-lg font-semibold transition duration-300 ease-in-out"
+                  onClick={handleLinkClick}
                 >
                   Mugs
                 </Link>
                 <Link
                   href="/zipperhoodies"
                   className="text-gray-200 hover:bg-pink-700 px-3 py-2 rounded-md text-lg font-semibold transition duration-300 ease-in-out"
+                  onClick={handleLinkClick}
                 >
                   Zipper Hoodies
                 </Link>
                 <Link
                   href="/mousepads"
                   className="text-gray-200 hover:bg-pink-700 px-3 py-2 rounded-md text-lg font-semibold transition duration-300 ease-in-out"
+                  onClick={handleLinkClick}
                 >
                   MousePads
                 </Link>
                 <Link
                   href="/cups"
                   className="text-gray-200 hover:bg-pink-700 px-3 py-2 rounded-md text-lg font-semibold transition duration-300 ease-in-out"
+                  onClick={handleLinkClick}
                 >
                   Cups
                 </Link>
                 <div
-                  
-                  className="text-gray-200 cursor-pointer flex   px-3 py-2 rounded-md text-lg font-semibold transition duration-300 ease-in-out shopping-cart"
+                  className="text-gray-200 cursor-pointer flex px-3 py-2 rounded-md text-lg font-semibold transition duration-300 ease-in-out shopping-cart"
+                  onClick={toggleSidebar}
                 >
-                  <AiOutlineShoppingCart fontSize="1.6rem " onClick={toggleSidebar}/>
-                  {/* <MdAccountCircle fontSize="1.6rem" className="ml-5"/> */}
-                  <Link href='/login'>
-              <MdAccountCircle fontSize="1.4rem" className="ml-4"/>
-              </Link>
+                  <AiOutlineShoppingCart fontSize="1.6rem" />
+                  <Link href="/login">
+                    <MdAccountCircle fontSize="1.4rem" className="ml-4" />
+                  </Link>
                 </div>
               </div>
             </div>
           </div>
           <div className="-mr-2 flex md:hidden">
-            <div
-              
-              className="text-gray-200 hover:bg-pink-700 flex px-3 py-2 rounded-md text-lg font-semibold transition duration-300 ease-in-out"
-            >
+            <div className="text-gray-200 flex px-3 py-2 rounded-md text-lg font-semibold transition duration-300 ease-in-out">
               <AiOutlineShoppingCart onClick={toggleSidebar} fontSize="1.4rem" />
-              <Link href='/login'>
-              <MdAccountCircle fontSize="1.4rem" className="ml-4"/>
+              <Link href="/login">
+                <MdAccountCircle fontSize="1.4rem" className="ml-4" />
               </Link>
             </div>
-           
             <button
               onClick={toggleNavbar}
               type="button"
@@ -123,66 +130,59 @@ const Navbar = () => {
       </div>
 
       <div
-        className={`${
-          isOpen
-            ? "block animated fade-enter-active"
-            : "hidden animated fade-exit-active"
-        } md:hidden`}
+        className={`${isOpen ? "block animated fade-enter-active" : "hidden animated fade-exit-active"} md:hidden`}
       >
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
           <Link
             href="/tshirts"
             className="text-gray-200 hover:bg-pink-700 block px-3 py-2 rounded-md text-base font-medium transition duration-300 ease-in-out"
+            onClick={handleLinkClick}
           >
             Tshirts
           </Link>
           <Link
             href="/hoodie"
             className="text-gray-200 hover:bg-pink-700 block px-3 py-2 rounded-md text-base font-medium transition duration-300 ease-in-out"
+            onClick={handleLinkClick}
           >
             Hoodies
           </Link>
           <Link
             href="/sweatshirts"
             className="text-gray-200 hover:bg-pink-700 block px-3 py-2 rounded-md text-base font-medium transition duration-300 ease-in-out"
+            onClick={handleLinkClick}
           >
             Sweat Shirts
           </Link>
           <Link
             href="/mugs"
             className="text-gray-200 hover:bg-pink-700 block px-3 py-2 rounded-md text-base font-medium transition duration-300 ease-in-out"
+            onClick={handleLinkClick}
           >
             Mugs
           </Link>
           <Link
             href="/zipperhoodies"
             className="text-gray-200 hover:bg-pink-700 block px-3 py-2 rounded-md text-base font-medium transition duration-300 ease-in-out"
+            onClick={handleLinkClick}
           >
             Zipper Hoodies
           </Link>
           <Link
             href="/mousepads"
             className="text-gray-200 hover:bg-pink-700 block px-3 py-2 rounded-md text-base font-medium transition duration-300 ease-in-out"
+            onClick={handleLinkClick}
           >
             MousePads
           </Link>
           <Link
             href="/cups"
             className="text-gray-200 hover:bg-pink-700 block px-3 py-2 rounded-md text-base font-medium transition duration-300 ease-in-out"
+            onClick={handleLinkClick}
           >
             Cups
           </Link>
         </div>
-      </div>
-
-      <div
-        className={`${
-          isOpen
-            ? "block animated fade-enter-active"
-            : "hidden animated fade-exit-active"
-        } md:hidden`}
-      >
-        {/* ... */}
       </div>
 
       {/* Sidebar */}
@@ -207,14 +207,7 @@ const Navbar = () => {
                       <button className="text-pink-500 text-2xl">
                         <AiOutlineMinus
                           onClick={() => {
-                            removeFromCart(
-                              k,
-                              1,
-                              cart[k].price,
-                              cart[k].name,
-                              cart[k].size,
-                              cart[k].variant
-                            );
+                            removeFromCart(k, 1, cart[k].price, cart[k].name, cart[k].size, cart[k].variant);
                           }}
                         />
                       </button>
@@ -222,14 +215,7 @@ const Navbar = () => {
                       <button className="text-pink-500 text-2xl">
                         <AiOutlinePlus
                           onClick={() => {
-                            addToCart(
-                              k,
-                              1,
-                              cart[k].price,
-                              cart[k].name,
-                              cart[k].size,
-                              cart[k].variant
-                            );
+                            addToCart(k, 1, cart[k].price, cart[k].name, cart[k].size, cart[k].variant);
                           }}
                         />
                       </button>
@@ -260,7 +246,7 @@ const Navbar = () => {
               onClick={toggleSidebar}
               className="absolute top-4 right-4 text-gray-200 text-2xl"
             >
-              <AiOutlineClose />
+              <AiOutlineClose/>
             </button>
           </div>
         </div>

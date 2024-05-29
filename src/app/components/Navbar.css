@@ -64,3 +64,8 @@
 #selection a::selection{
 background-color: red;
 }
+.logo{
+/* height: 20vh; */
+
+/* opacity:0.3; */
+}
