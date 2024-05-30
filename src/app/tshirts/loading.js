@@ -3,8 +3,8 @@ import React from 'react';
 
 const Loading = () => (
   <div className="flex justify-center items-center h-screen">
-    <div className="w-8 h-8 rounded-full animate-spin border-2 border-blue-500" />
-  </div>
+      <div className="w-16 h-16 border-4 border-blue-400 rounded-full animate-spin border-dashed"></div>
+    </div>
 );
 
 export default Loading;
