@@ -100,7 +100,8 @@ const Page = async () => {
                       {products[item].color.map((color, index) => (
                         <button
                           key={index}
-                          className={`border-2 border-gray-300 mx-1 bg-${color}-500 rounded-full w-6 h-6 focus:outline-none transition-colors hover:bg-${color}-600`}
+                          className={`border-2 border-gray-300 mx-1  rounded-full w-6 h-6 focus:outline-none transition-colors hover:bg-${color}-600`}
+                          style={{backgroundColor:color}} 
                         />
                       ))}
                     </div>
