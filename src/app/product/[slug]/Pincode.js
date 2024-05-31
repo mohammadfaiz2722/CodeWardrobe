@@ -1,19 +1,20 @@
 "use client";
 import { CartContext } from '@/app/cartContext';
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { AiOutlineStar, AiFillStar } from "react-icons/ai";
 import { FaFacebookF, FaTwitter, FaWhatsapp } from "react-icons/fa";
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const Pincode = ({ slug, product, colorSizeSlug, variants }) => {
   product = JSON.parse(product);
   colorSizeSlug = JSON.parse(colorSizeSlug);
   variants = JSON.parse(variants);
-console.log(variants);
-  const { addToCart,buyNow } = useContext(CartContext);
+  const { addToCart, buyNow } = useContext(CartContext);
   const [pinCode, setPinCode] = useState("");
   const [isAvailable, setIsAvailable] = useState(null);
   const [color, setColor] = useState(product.color);
   const [size, setSize] = useState(product.size);
+  const [image, setImage] = useState(product.img);
 
   const handlePinCodeChange = (e) => {
     setPinCode(e.target.value);
@@ -26,8 +27,28 @@ console.log(variants);
 
       if (pinsjson.includes(parseInt(pinCode))) {
         setIsAvailable(true);
+        toast.success('Your PinCode is Serviceable', {
+          position: 'top-right',
+          autoClose: 1000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          theme:'dark',
+          draggable: true,
+          className: 'toast-custom-success',
+        });
       } else {
         setIsAvailable(false);
+        toast.error('Sorry PinCode not Serviceable', {
+          position: 'top-right',
+          autoClose: 1000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          theme:'dark',
+          draggable: true,
+          className: 'toast-custom-error',
+        });
       }
     } catch (error) {
       console.error('Error checking PIN code availability:', error);
@@ -37,22 +58,51 @@ console.log(variants);
 
   const handleAddToCart = () => {
     addToCart(slug, 1, product.price, `${product.title}(${size}/${color})`, size, color);
+    toast.success('Item Added to cart', {
+      position: 'top-right',
+      autoClose: 1000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      theme:'dark',
+      draggable: true,
+      className: 'toast-custom-success',
+    });
   };
 
-  // Buying function
- 
+  const handleColor = (newColor) => {
+    if (newColor !== color) {
+      setColor(newColor);
+      // Update size to the first available size for the new color
+      const availableSizes = Object.keys(colorSizeSlug[newColor] || {});
+      if (availableSizes.length > 0) {
+        setSize(availableSizes[0]);
+      } else {
+        setSize("");
+      }
+      // Update image based on selected color
+      const newVariant = variants.find(variant => variant.color === newColor && variant.size === size);
+      setImage(newVariant ? newVariant.img : product.img);
+    }
+  };
+
   return (
     <div className="bg-gray-100 min-h-screen">
+      <ToastContainer
+    
+    />
       <section className="text-gray-700 body-font overflow-hidden">
         <div className="container px-5 py-24 mx-auto">
           <div className="lg:w-4/5 mx-auto flex flex-wrap bg-white rounded-lg shadow-md">
             <img
               alt="ecommerce"
               className="lg:w-1/2 w-full lg:h-auto object-cover object-top rounded-t-lg lg:rounded-l-lg lg:rounded-tr-none"
-              src={product.img}
+              src={image}
+             
             />
             <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0 p-6">
-              <h2 className="text-sm title-font text-gray-500 tracking-widest uppercase">
+              <h2    className="text-sm  title-font text-gray-500 tracking-widest uppercase">
+
                 CodeWardrobe.com
               </h2>
               <h1 className="text-gray-900 text-3xl title-font font-medium mb-4">
@@ -99,7 +149,7 @@ console.log(variants);
                       key={variantColor}
                       className={`border-2 border-gray-300 rounded-full w-6 h-6 focus:outline-none ${color === variantColor ? 'ring-2 ring-pink-500' : ''}`}
                       style={{ backgroundColor: variantColor }}
-                      onClick={() => setColor(variantColor)}
+                      onClick={() => { handleColor(variantColor) }}
                     ></button>
                   ))}
                 </div>
@@ -108,8 +158,7 @@ console.log(variants);
                   <div className="relative">
                     <select
                       value={size}
-                      onChange={(e) =>{setSize(e.target.value)}}
-                      onClick={(e)=>{setSize(e.target.value)}}
+                      onChange={(e) => { setSize(e.target.value) }}
                       className="rounded border appearance-none border-gray-400 py-2 focus:outline-none focus:ring-2 focus:ring-pink-200 focus:border-pink-500 text-base pl-3 pr-10"
                     >
                       {Object.keys(colorSizeSlug[color] || {}).map((sizeOption) => (
@@ -136,13 +185,13 @@ console.log(variants);
                 <span className="title-font font-medium text-2xl text-gray-900">
                   ₹{product.price}
                 </span>
-               
-                  <button onClick={()=>buyNow(slug, 1, product.price, `${product.title}(${size}/${color})`, size, color)} className="flex text-white bg-pink-500 border-0 py-2 px-4 md:px-6 focus:outline-none hover:bg-pink-600 rounded text-lg transition duration-300">
-                    Buy Now
-                  </button>
+
+                <button onClick={() => buyNow(slug, 1, product.price, `${product.title}(${size}/${color})`, size, color)} className="flex text-white bg-pink-500 border-0 py-2 px-4 md:px-6 focus:outline-none hover:bg-pink-600 rounded text-lg transition duration-300">
+                  Buy Now
+                </button>
 
               </div>
-              <div className="pincode-container mt-6">
+              <div className="pincode-container mt-6g the code">
                 <div className="flex items-center mb-4">
                   <input
                     type="text"
@@ -171,6 +220,7 @@ console.log(variants);
                 >
                   Add to Cart
                 </button>
+              
               </div>
             </div>
           </div>
@@ -179,5 +229,4 @@ console.log(variants);
     </div>
   );
 };
-
 export default Pincode;

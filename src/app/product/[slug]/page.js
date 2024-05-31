@@ -1,6 +1,7 @@
 import Pincode from "./Pincode";
 import mongoose from "mongoose";
 import Product from "../../../../models/Product";
+
 const PostPage = async({ params }) => {
   async function fetchData() {
     try {
