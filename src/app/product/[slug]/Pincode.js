@@ -3,14 +3,13 @@ import { CartContext } from '@/app/cartContext';
 import React, { useContext, useState } from 'react';
 import { AiOutlineStar, AiFillStar } from "react-icons/ai";
 import { FaFacebookF, FaTwitter, FaWhatsapp } from "react-icons/fa";
-import Link from "next/link";
 
 const Pincode = ({ slug, product, colorSizeSlug, variants }) => {
   product = JSON.parse(product);
   colorSizeSlug = JSON.parse(colorSizeSlug);
   variants = JSON.parse(variants);
-
-  const { addToCart } = useContext(CartContext);
+console.log(variants);
+  const { addToCart,buyNow } = useContext(CartContext);
   const [pinCode, setPinCode] = useState("");
   const [isAvailable, setIsAvailable] = useState(null);
   const [color, setColor] = useState(product.color);
@@ -40,6 +39,8 @@ const Pincode = ({ slug, product, colorSizeSlug, variants }) => {
     addToCart(slug, 1, product.price, `${product.title}(${size}/${color})`, size, color);
   };
 
+  // Buying function
+ 
   return (
     <div className="bg-gray-100 min-h-screen">
       <section className="text-gray-700 body-font overflow-hidden">
@@ -55,7 +56,7 @@ const Pincode = ({ slug, product, colorSizeSlug, variants }) => {
                 CodeWardrobe.com
               </h2>
               <h1 className="text-gray-900 text-3xl title-font font-medium mb-4">
-                {product.title}
+                {product.title} ({size}/{color})
               </h1>
               <div className="flex mb-4">
                 <span className="flex items-center">
@@ -107,11 +108,12 @@ const Pincode = ({ slug, product, colorSizeSlug, variants }) => {
                   <div className="relative">
                     <select
                       value={size}
-                      onChange={(e) => setSize(e.target.value)}
+                      onChange={(e) =>{setSize(e.target.value)}}
+                      onClick={(e)=>{setSize(e.target.value)}}
                       className="rounded border appearance-none border-gray-400 py-2 focus:outline-none focus:ring-2 focus:ring-pink-200 focus:border-pink-500 text-base pl-3 pr-10"
                     >
                       {Object.keys(colorSizeSlug[color] || {}).map((sizeOption) => (
-                        <option key={sizeOption} value={sizeOption}>{sizeOption}</option>
+                        <option key={sizeOption} value={sizeOption} >{sizeOption}</option>
                       ))}
                     </select>
                     <span className="absolute right-0 top-0 h-full w-10 text-center text-gray-600 pointer-events-none flex items-center justify-center">
@@ -134,11 +136,11 @@ const Pincode = ({ slug, product, colorSizeSlug, variants }) => {
                 <span className="title-font font-medium text-2xl text-gray-900">
                   ₹{product.price}
                 </span>
-                <Link href="/checkout">
-                  <button className="flex text-white bg-pink-500 border-0 py-2 px-4 md:px-6 focus:outline-none hover:bg-pink-600 rounded text-lg transition duration-300">
+               
+                  <button onClick={()=>buyNow(slug, 1, product.price, `${product.title}(${size}/${color})`, size, color)} className="flex text-white bg-pink-500 border-0 py-2 px-4 md:px-6 focus:outline-none hover:bg-pink-600 rounded text-lg transition duration-300">
                     Buy Now
                   </button>
-                </Link>
+
               </div>
               <div className="pincode-container mt-6">
                 <div className="flex items-center mb-4">

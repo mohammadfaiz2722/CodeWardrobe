@@ -157,21 +157,9 @@ const Checkout = () => {
                   <li key={k} className="py-4 flex justify-between items-center">
                     <div className="text-sm font-medium text-gray-900">{cart[k].name}</div>
                     <div className="flex items-center">
-                      <button
-                        className="text-gray-500 hover:text-gray-700 transition duration-300"
-                        onClick={() => {
-                          removeFromCart(k, 1, cart[k].price, cart[k].name, cart[k].size, cart[k].variant);
-                        }}
-                      >
-                        -
-                      </button>
+                      
                       <span className="mx-2 text-sm font-medium text-gray-900">{cart[k].qty}</span>
-                      <button
-                        className="text-gray-500 hover:text-gray-700 transition duration-300"
-                        onClick={() => addToCart(k, 1, cart[k].price, cart[k].size, cart[k].variant)}
-                      >
-                        +
-                      </button>
+                     
                     </div>
                     <div className="text-sm font-medium text-gray-900">₹{cart[k].price * cart[k].qty}</div>
                   </li>

@@ -187,7 +187,7 @@ const Navbar = () => {
 
       {/* Sidebar */}
       <div
-        className={`fixed top-0 z-10 right-0 h-full w-80 bg-gradient-to-r from-pink-800 to-pink-500 transition-transform duration-300 ${
+        className={`fixed top-0 z-10 overflow-y-scroll right-0 h-full w-80 bg-gradient-to-r from-pink-800 to-pink-500 transition-transform duration-300 ${
           isSidebarOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >

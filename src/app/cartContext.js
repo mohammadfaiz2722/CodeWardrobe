@@ -1,4 +1,6 @@
 "use client"
+import { useRouter } from 'next/navigation';
+// import { useRouter  from 'next/navigation';
 import React, { createContext, useState, useEffect } from 'react';
 
 export const CartContext = createContext();
@@ -6,72 +8,76 @@ export const CartContext = createContext();
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState({});
   const [subTotal, setSubTotal] = useState(0);
-
+const router=useRouter();
   useEffect(() => {
-    console.log("Hello i am useEffect from Page[app.js].js");
+    console.log("Hello I am useEffect from Page[app.js].js");
     try {
       if (localStorage.getItem('cart')) {
         setCart(JSON.parse(localStorage.getItem('cart')));
       }
-      if(localStorage.getItem('total'))
-        {
-          setSubTotal(parseInt(localStorage.getItem('total')))
-        }
+      if(localStorage.getItem('total')) {
+        setSubTotal(parseInt(localStorage.getItem('total')));
+      }
     } catch (error) {
       console.log(error);
       localStorage.clear();
     }
   }, []);
 
- const addToCart=(itemCode,qty,price,name,size,variant)=>
- {
-let newCart=cart;
-if(itemCode in cart)
-    {
-        newCart[itemCode].qty=cart[itemCode].qty+qty;
-    }
-    else{
-        
-        newCart[itemCode]={qty:1,price,name,size,variant}
-    }
+  const addToCart = (itemCode, qty, price, name, size, variant) => {
+    let newCart = { ...cart };
+    const itemKey = `${itemCode}_${size}_${variant}`;
     console.log(newCart);
-    setCart(newCart)
-    saveCart(newCart)
- }
+
+    if (itemKey in newCart) {
+      newCart[itemKey].qty = newCart[itemKey].qty + qty;
+    } else {
+      newCart[itemKey] = { qty, price, name, size, variant };
+    }
+    setCart(newCart);
+    saveCart(newCart);
+  };
+
+  const removeFromCart = (itemCode, qty, price, name, size, variant) => {
+    let newCart = { ...cart };
+    const itemKey = `${itemCode}_${size}_${variant}`;
+
+    if (itemKey in newCart) {
+      newCart[itemKey].qty = newCart[itemKey].qty - qty;
+      if (newCart[itemKey].qty <= 0) {
+        delete newCart[itemKey];
+      }
+    }
+    setCart(newCart);
+    saveCart(newCart);
+  };
+
+  const clearCart = () => {
+    setCart({});
+    saveCart({});
+    console.log("Cart has been cleared");
+  };
+
+  const buyNow=(itemCode, qty, price, name, size, variant)=>{
+  
+    const itemKey = `${itemCode}_${size}_${variant}`;
+    let newCart =  {itemCode:{ qty:1, price, name, size, variant }};
+    // console.log(newCart);
+    setCart(newCart);
+    saveCart(newCart);
 
   
-    const removeFromCart=(itemCode,qty,price,name,size,variant)=>{
-  
-        let newCart=cart;
-        if (itemCode in cart)
-          {
-            newCart[itemCode].qty=cart[itemCode].qty-qty
-          }
-          if(newCart[itemCode]["qty"]<=0)
-            {
-              delete newCart[itemCode];
-            }
-          setCart(newCart);
-          saveCart(newCart)
-        }
-
-        const clearCart=()=>
-            {
-              setCart({});
-              saveCart({})
-              console.log("Cart has been cleard");
-            }
+    router.push('/checkout')
+  }
   const saveCart = (myCart) => {
-    localStorage.setItem('cart',JSON.stringify(myCart));
-    let subt=0;
-    let keys=Object.keys(myCart);
-    console.log(keys.length);
-    for(let i=0;i<keys.length;i++)
-        {
-            subt+=myCart[keys[i]].price*myCart[keys[i]].qty;
-        }
-        localStorage.setItem('total',JSON.stringify(subt))
-        setSubTotal(parseInt(localStorage.getItem('total')))
+    localStorage.setItem('cart', JSON.stringify(myCart));
+    let subt = 0;
+    let keys = Object.keys(myCart);
+    for (let i = 0; i < keys.length; i++) {
+      subt += myCart[keys[i]].price * myCart[keys[i]].qty;
+    }
+    localStorage.setItem('total', JSON.stringify(subt));
+    setSubTotal(parseInt(localStorage.getItem('total')));
   };
 
   const contextValue = {
@@ -80,6 +86,7 @@ if(itemCode in cart)
     addToCart,
     removeFromCart,
     clearCart,
+    buyNow,
   };
 
   return (
