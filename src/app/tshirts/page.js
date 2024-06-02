@@ -13,7 +13,7 @@ async function fetchData() {
     throw new Error("Error connecting to MongoDB");
   }
 
-  let products = await Product.find();
+  let products = await Product.find({category:'tShirt'});
   let tShirts = {};
   for (let item of products) {
     if (item.title in tShirts) {

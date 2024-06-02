@@ -13,7 +13,7 @@ const PostPage = async({ params }) => {
     }
     
     let products = await Product.findOne({ slug: params.slug });
-    let variants = await Product.find({ title: products.title });
+    let variants = await Product.find({ title: products.title ,category:products.category});
     let colorSizeSlug = {}; // { red: { XL: { slug: 'wear-the-code-xl' } } }
   
     for (let item of variants) {
