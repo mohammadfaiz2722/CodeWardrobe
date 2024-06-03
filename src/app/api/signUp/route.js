@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 import User from "../../../../models/User";
 import bcrypt from 'bcrypt';
 
-const pepper = process.env.PEPPER || 'PutThatShitDown';// Use environment variable for pepper
+const pepper = process.env.PEPPER ;// Use environment variable for pepper
 console.log(pepper);
 const saltRounds = 10;
 
