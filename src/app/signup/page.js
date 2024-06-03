@@ -66,6 +66,10 @@ const router=useRouter();
         progress: undefined,
         theme: "light",
       });
+      setTimeout(()=>{
+
+        router.push('/login')
+      },1200)
       
       // Handle successful signup (e.g., clear form, redirect)
       snap();
@@ -79,7 +83,7 @@ const router=useRouter();
         console.error(error);
       }
     }
-    router.push('/login')
+   
   };
   
   return (
