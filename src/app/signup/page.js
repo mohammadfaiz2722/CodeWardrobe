@@ -3,12 +3,13 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { z } from 'zod';
 
 const signupSchema = z.object({
-  name: z.string().min(5, 'Name must be at least 2 characters'),
+  name: z.string().min(2, 'Name must be at least 2 characters'),
   email: z.string().email('Invalid email address'),
   password: z.string().min(10, 'Password must be at least 10 characters'),
 });
@@ -18,7 +19,7 @@ const SignUp = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [validationErrors, setValidationErrors] = useState([]);
-
+const router=useRouter();
   const snap = () => {
     setName("");
     setEmail("");
@@ -65,7 +66,7 @@ const SignUp = () => {
         progress: undefined,
         theme: "light",
       });
-
+      
       // Handle successful signup (e.g., clear form, redirect)
       snap();
     } catch (error) {
@@ -78,8 +79,9 @@ const SignUp = () => {
         console.error(error);
       }
     }
+    router.push('/login')
   };
-
+  
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-pink-500 to-purple-600">
       <div className="max-w-md w-full bg-white rounded-lg shadow-md overflow-hidden">

@@ -3,18 +3,83 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+// import { NextResponse } from 'next/server';
+import { useRouter } from 'next/navigation';
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-
-  const handleSubmit = (e) => {
+  const router=useRouter();
+const snap=()=>{
+  setEmail('');
+  setPassword('')
+}
+  const handleSubmit =async (e) => {
     e.preventDefault();
-    // Handle form submission logic here
-  };
+    const formBody={email,password};
+    const response = await fetch("http://localhost:3000/api/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formBody),
+    })
+    if (!response.ok) {
+      toast.error('Invalid Credentials', {
+        position: "top-center",
+        autoClose: 1000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+      
+      snap();
+      // throw new Error(`API request failed with status ${response.status}`);
+      // router.push('http://localhost:3000/login')
+      
+    }
+    else{
+      
+      
+      toast.success('Logged in successfully', {
+        position: "top-center",
+        autoClose: 1000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+      // Handle form submission logic here
+      const data=await response.json();
+      console.log(data);
+      // snap();
+      setTimeout(()=>{
 
+        router.push('http://localhost:3000')
+      },1200)
+  };
+  
+}
   return (
     <div className="min-h-screen flex items-center justify-center  bg-gradient-to-br from-pink-500 to-purple-600">
+       <ToastContainer
+            position="top-center"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="light"
+          />
       <div className="max-w-md w-full bg-white rounded-lg shadow-md overflow-hidden animate__animated animate__fadeInUp">
         <div className="px-6 py-8">
           <div className="flex justify-center mb-4">
