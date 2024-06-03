@@ -22,4 +22,4 @@ required:true
    },
 },{timestamps:true});
 
-const Product = mongoose.models.Order ||  mongoose.model("Order",orderSchema)
+const Order = mongoose.models.Order ||  mongoose.model("Order",orderSchema)

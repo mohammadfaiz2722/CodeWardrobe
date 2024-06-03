@@ -27,7 +27,7 @@ const Navbar = () => {
   const { cart, addToCart, removeFromCart, clearCart, subTotal } = useContext(CartContext);
 
   return (
-    <nav className="sticky-navbar bg-gradient-to-r from-pink-800 to-pink-500 shadow-xl">
+    <nav className=" bg-gradient-to-r from-pink-800 to-pink-500 shadow-xl">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <div className="flex items-center">
@@ -95,9 +95,9 @@ const Navbar = () => {
                 </Link>
                 <div
                   className="text-gray-200 cursor-pointer flex px-3 py-2 rounded-md text-lg font-semibold transition duration-300 ease-in-out shopping-cart"
-                  onClick={toggleSidebar}
+             
                 >
-                  <AiOutlineShoppingCart fontSize="1.6rem" />
+                  <AiOutlineShoppingCart fontSize="1.6rem"      onClick={toggleSidebar}/>
                   <Link href="/login">
                     <MdAccountCircle fontSize="1.4rem" className="ml-4" />
                   </Link>

@@ -1,10 +1,8 @@
 // pages/login.js
 "use client"
-// pages/login.js
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -16,13 +14,8 @@ const Login = () => {
   };
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: -100 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-      className="min-h-screen flex items-center justify-center  bg-gradient-to-br from-pink-500 to-purple-600"
-    >
-      <div className="max-w-md w-full bg-white rounded-lg shadow-md overflow-hidden">
+    <div className="min-h-screen flex items-center justify-center  bg-gradient-to-br from-pink-500 to-purple-600">
+      <div className="max-w-md w-full bg-white rounded-lg shadow-md overflow-hidden animate__animated animate__fadeInUp">
         <div className="px-6 py-8">
           <div className="flex justify-center mb-4">
             <Image src="/logo.png" alt="Logo" width={120} height={120} />
@@ -59,12 +52,12 @@ const Login = () => {
             <div className="flex items-center justify-between">
               <button
                 type="submit"
-                className="bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-pink-500"
+                className="bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-pink-500 transition duration-300 ease-in-out transform hover:scale-105"
               >
                 Login
               </button>
               <Link href="/forgotpassword">
-                <div className="inline-block align-baseline font-bold text-sm text-pink-500 hover:text-pink-600 cursor-pointer">
+                <div className="inline-block align-baseline font-bold text-sm text-pink-500 hover:text-pink-600 cursor-pointer transition duration-300 ease-in-out transform hover:scale-105">
                   Forgot Password?
                 </div>
               </Link>
@@ -75,14 +68,14 @@ const Login = () => {
           <p className="text-gray-600 text-center">
             Don't have an account?{' '}
             <Link href="/signup">
-              <span className="text-pink-500 hover:text-pink-600 font-bold cursor-pointer">
+              <span className="text-pink-500 hover:text-pink-600 font-bold cursor-pointer transition duration-300 ease-in-out transform hover:scale-105">
                 Sign Up
               </span>
             </Link>
           </p>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 
