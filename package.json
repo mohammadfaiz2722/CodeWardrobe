@@ -11,6 +11,8 @@
   "dependencies": {
     "@react-three/drei": "^9.105.6",
     "@react-three/fiber": "^8.16.6",
+    "bcrypt": "^5.1.1",
+    "crypto-js": "^4.2.0",
     "framer-motion": "^11.2.4",
     "mongoose": "^8.4.0",
     "next": "14.2.3",
