@@ -1,5 +1,5 @@
 // pages/signup.js
-"use client"
+"use client";
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -7,6 +7,8 @@ import { useRouter } from 'next/navigation';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { z } from 'zod';
+
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 const signupSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters'),
@@ -19,12 +21,13 @@ const SignUp = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [validationErrors, setValidationErrors] = useState([]);
-const router=useRouter();
+  const router = useRouter();
+
   const snap = () => {
     setName("");
     setEmail("");
     setPassword("");
-  }
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault(); // Prevent default form submission behavior
@@ -66,11 +69,11 @@ const router=useRouter();
         progress: undefined,
         theme: "light",
       });
-      setTimeout(()=>{
-
+      snap();
+      setTimeout(() => {
         router.push('/login')
-      },1200)
-      
+      }, 1200);
+
       // Handle successful signup (e.g., clear form, redirect)
       snap();
     } catch (error) {
@@ -83,14 +86,18 @@ const router=useRouter();
         console.error(error);
       }
     }
-   
   };
-  
+
+  const [hidden,setHidden]=useState(false)
+  const showPassword=()=>{
+    setHidden(!hidden)
+    console.log(hidden);
+  }
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-pink-500 to-purple-600">
       <div className="max-w-md w-full bg-white rounded-lg shadow-md overflow-hidden">
         <div className="flex justify-center mb-4">
-          <Image src="/logo.png" alt="Logo" width={120} height={120} />
+          <Image src="/latest.png" alt="latest" width={190} height={120} />
         </div>
         <div className="px-6 py-8">
           <ToastContainer
@@ -141,18 +148,22 @@ const router=useRouter();
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-pink-500"
               />
             </div>
-            <div className="mb-6">
+            <div className="mb-6 relative">
               <label htmlFor="password" className="block text-gray-700 text-sm font-bold mb-2">
                 Password
               </label>
               <input
-                type="password"
+              type={hidden? "text" : "password"}
                 id="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:ring-2 focus:ring-pink-500"
               />
+              <div className="absolute top-2/3 right-3 transform -translate-y-1/2 text-black cursor-pointer" style={{fontSize:'22px',marginTop:'-5px'}} onClick={showPassword}>
+
+          {!hidden?<FaEye/>:<FaEyeSlash/>}
+              </div>
             </div>
             <div className="flex items-center justify-between">
               <button
