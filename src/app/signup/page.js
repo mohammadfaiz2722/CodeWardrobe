@@ -1,12 +1,13 @@
 // pages/signup.js
 "use client";
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { z } from 'zod';
+
 
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
@@ -22,6 +23,12 @@ const SignUp = () => {
   const [password, setPassword] = useState('');
   const [validationErrors, setValidationErrors] = useState([]);
   const router = useRouter();
+  useEffect(()=>{
+    if(localStorage.getItem('token'))
+      {
+        router.push('/')
+      }
+  },[])
 
   const snap = () => {
     setName("");

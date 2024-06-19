@@ -11,7 +11,7 @@ import { MdAccountCircle } from "react-icons/md";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-
+  const [dropdown, setDropdown] = useState(false);
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
@@ -24,10 +24,22 @@ const Navbar = () => {
     setIsOpen(false);
   };
 
-  const { cart, addToCart, removeFromCart, clearCart, subTotal } = useContext(CartContext);
+  const { logout,cart, addToCart, removeFromCart, clearCart, subTotal, user } = useContext(CartContext);
+
+  const toggleDropdown = () => {
+    setDropdown(!dropdown);
+  };
+
+  const handleMouseEnter = () => {
+    setDropdown(true);
+  };
+
+  const handleMouseLeave = () => {
+    setDropdown(false);
+  };
 
   return (
-    <nav className=" bg-gradient-to-r from-pink-800 to-pink-500 shadow-xl">
+    <nav className="bg-gradient-to-r from-pink-800 to-pink-500 shadow-xl">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <div className="flex items-center">
@@ -93,24 +105,61 @@ const Navbar = () => {
                 >
                   Cups
                 </Link>
-                <div
-                  className="text-gray-200 cursor-pointer flex px-3 py-2 rounded-md text-lg font-semibold transition duration-300 ease-in-out shopping-cart"
-             
-                >
-                  <AiOutlineShoppingCart fontSize="1.6rem"      onClick={toggleSidebar}/>
-                  <Link href="/login">
-                    <MdAccountCircle fontSize="1.4rem" className="ml-4" />
-                  </Link>
+                <div className="text-gray-200 cursor-pointer flex px-3 py-2 rounded-md text-lg font-semibold transition duration-300 ease-in-out shopping-cart">
+                  {user.value && (
+                    <div className="relative ml-4 p-2" style={{ marginTop: '-8px' }} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+                      <MdAccountCircle fontSize="1.4rem" />
+                      {dropdown && (
+                        <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-20">
+                          <Link href="/account" className="block px-4 py-2 text-sm text-secondary hover:bg-gray-100">
+                            My Account
+                          </Link>
+                          <Link href="/orders" className="block px-4 py-2 text-sm text-secondary hover:bg-gray-100">
+                            Orders
+                          </Link>
+                          <button onClick={logout} className="block px-4 py-2 text-sm text-secondary hover:bg-gray-100 " style={{width:'12.4vw',textAlign:'start'}}>
+                            Logout
+                          </button>
+                        </div>
+                      )}
+                    </div>
+                  )}
+                  {!user.value && (
+                    <Link href="/login" style={{ marginRight: '12px', marginLeft: '22px' }}>
+                      <button>Login</button>
+                    </Link>
+                  )}
+                  <AiOutlineShoppingCart fontSize="1.6rem" onClick={toggleSidebar} style={{ marginLeft: '15px', marginTop: '-2px' }} />
                 </div>
               </div>
             </div>
           </div>
-          <div className="-mr-2 flex md:hidden">
-            <div className="text-gray-200 flex px-3 py-2 rounded-md text-lg font-semibold transition duration-300 ease-in-out">
-              <AiOutlineShoppingCart onClick={toggleSidebar} fontSize="1.4rem" />
-              <Link href="/login">
-                <MdAccountCircle fontSize="1.4rem" className="ml-4" />
-              </Link>
+          <div className="-mr-2 flex md:hidden items-center">
+            <div className="text-gray-200 flex items-center px-3 py-2 rounded-md text-lg font-semibold transition duration-300 ease-in-out">
+              <AiOutlineShoppingCart onClick={toggleSidebar} fontSize="1.4rem" className="mt-1" />
+              {user.value && (
+                <div className="relative ml-4" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+                  <MdAccountCircle fontSize="1.4rem" />
+                  {dropdown && (
+                    <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-20">
+                      <Link href="/myaccount" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                        My Account
+                      </Link>
+                      <Link href="/Orders" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                        Orders
+                      </Link>
+                      <Link href="/logout" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                        Logout
+                      </Link>
+                    </div>
+                  )}
+                </div>
+              )}
+              {!user.value && (
+                <Link href="/login" className="ml-2">
+                  <button>Login</button>
+                </Link>
+              )}
             </div>
             <button
               onClick={toggleNavbar}
@@ -187,9 +236,8 @@ const Navbar = () => {
 
       {/* Sidebar */}
       <div
-        className={`fixed top-0 z-10 overflow-y-scroll right-0 h-full w-80 bg-gradient-to-r from-pink-800 to-pink-500 transition-transform duration-300 ${
-          isSidebarOpen ? "translate-x-0" : "translate-x-full"
-        }`}
+        className={`fixed top-0 z-10 overflow-y-scroll right-0 h-full w-80 bg-gradient-to-r from-pink-800 to-pink-500 transition-transform duration-300 ${isSidebarOpen ? "translate-x-0" : "translate-x-full"
+          }`}
       >
         <div className="relative h-full flex flex-col">
           <div className="p-6 flex-grow">
@@ -246,7 +294,7 @@ const Navbar = () => {
               onClick={toggleSidebar}
               className="absolute top-4 right-4 text-gray-200 text-2xl"
             >
-              <AiOutlineClose/>
+              <AiOutlineClose />
             </button>
           </div>
         </div>

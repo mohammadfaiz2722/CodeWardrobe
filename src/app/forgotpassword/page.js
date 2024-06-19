@@ -1,18 +1,25 @@
 // pages/forgot-password.js
 "use client"
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import { useRouter } from 'next/navigation';
 
 const ForgotPassword = () => {
+  const router=useRouter();
   const [email, setEmail] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
     // Handle form submission logic here
   };
-
+  useEffect(()=>{
+    if(localStorage.getItem('token'))
+      {
+        router.push('/')
+      }
+  },[])
   return (
     <motion.div
       initial={{ opacity: 0, y: -100 }}

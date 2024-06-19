@@ -1,13 +1,12 @@
 // pages/login.js
 "use client";
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useRouter } from 'next/navigation';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
-
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -19,6 +18,12 @@ const Login = () => {
     setPassword('');
   };
 
+  useEffect(()=>{
+    if(localStorage.getItem('token'))
+      {
+        router.push('/')
+      }
+  },[])
   const handleSubmit = async (e) => {
     e.preventDefault();
     const formBody = { email, password };

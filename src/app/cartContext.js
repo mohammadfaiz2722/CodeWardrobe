@@ -1,13 +1,15 @@
 "use client"
 import { useRouter } from 'next/navigation';
 // import { useRouter  from 'next/navigation';
-import React, { createContext, useState, useEffect } from 'react';
+import React, { createContext, useState, useEffect, use } from 'react';
 
 export const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState({});
   const [subTotal, setSubTotal] = useState(0);
+  const [user,setUser]=useState({value:null})
+  const [key,setKey]=useState()
 const router=useRouter();
   useEffect(() => {
     console.log("Hello I am useEffect from Page[app.js].js");
@@ -22,7 +24,14 @@ const router=useRouter();
       console.log(error);
       localStorage.clear();
     }
-  }, []);
+    const token=localStorage.getItem('token');
+    if(token)
+      {
+        setKey(Math.random())
+        setUser({value:token})
+      }
+  }, [router.query]);
+  
 
   const addToCart = (itemCode, qty, price, name, size, variant) => {
     let newCart = { ...cart };
@@ -38,6 +47,12 @@ const router=useRouter();
     saveCart(newCart);
   };
 
+
+  const logout=()=>{
+  localStorage.removeItem("token")
+  setUser({value:null})
+  setKey(Math.random())
+  }
   const removeFromCart = (itemCode, qty, price, name, size, variant) => {
     let newCart = { ...cart };
     const itemKey = `${itemCode}_${size}_${variant}`;
@@ -87,10 +102,14 @@ const router=useRouter();
     removeFromCart,
     clearCart,
     buyNow,
+    key,
+    user,
+    logout
   };
 
   return (
     <CartContext.Provider value={contextValue}>
+      
       {children}
     </CartContext.Provider>
   );
