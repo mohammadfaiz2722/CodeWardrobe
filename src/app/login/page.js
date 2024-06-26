@@ -63,7 +63,7 @@ const Login = () => {
       });
       snap();
       setTimeout(() => {
-        router.push('http://localhost:3000');
+        router.push('/');
       }, 1200);
     }
   };

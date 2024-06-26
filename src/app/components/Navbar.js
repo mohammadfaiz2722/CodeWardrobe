@@ -111,13 +111,13 @@ const Navbar = () => {
                       <MdAccountCircle fontSize="1.4rem" />
                       {dropdown && (
                         <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-20">
-                          <Link href="/account" className="block px-4 py-2 text-sm text-secondary hover:bg-gray-100">
+                          <Link href="/myAccount" className="block px-4 py-2 text-sm text-black hover:text-secondary ">
                             My Account
                           </Link>
-                          <Link href="/orders" className="block px-4 py-2 text-sm text-secondary hover:bg-gray-100">
+                          <Link href="/Orders" className="block px-4 py-2 text-sm text-black hover:text-secondary border ">
                             Orders
                           </Link>
-                          <button onClick={logout} className="block px-4 py-2 text-sm text-secondary hover:bg-gray-100 " style={{width:'12.4vw',textAlign:'start'}}>
+                          <button onClick={logout} className="block px-4 py-2 text-sm text-black hover:text-secondary  " style={{width:'12.4vw',textAlign:'start'}}>
                             Logout
                           </button>
                         </div>
@@ -142,7 +142,7 @@ const Navbar = () => {
                   <MdAccountCircle fontSize="1.4rem" />
                   {dropdown && (
                     <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-20">
-                      <Link href="/myaccount" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                      <Link href="/myAccount" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
                         My Account
                       </Link>
                       <Link href="/Orders" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">

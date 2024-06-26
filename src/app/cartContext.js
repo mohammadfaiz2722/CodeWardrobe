@@ -51,7 +51,9 @@ const router=useRouter();
   const logout=()=>{
   localStorage.removeItem("token")
   setUser({value:null})
+
   setKey(Math.random())
+  router.push('/')
   }
   const removeFromCart = (itemCode, qty, price, name, size, variant) => {
     let newCart = { ...cart };
